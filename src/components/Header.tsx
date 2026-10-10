@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MessageSquare, Menu, X, Calendar } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 
 interface HeaderProps {
   onOpenArrangementModal: (serviceType?: string) => void;
@@ -14,74 +14,6 @@ export default function Header({ onOpenArrangementModal }: HeaderProps) {
 
   return (
     <header style={{ position: "sticky", top: 0, zIndex: 100, width: "100%", background: "#000000" }}>
-      {/* 24/7 Emergency Dispatch Top Bar - Black & Gold Accent */}
-      <div
-        style={{
-          background: "#050505",
-          borderBottom: "1px solid var(--border-gold-hairline)",
-          color: "var(--text-secondary)",
-          padding: "0.45rem 1rem",
-          fontSize: "0.8rem",
-          letterSpacing: "0.06em",
-        }}
-      >
-        <div
-          className="container"
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: "0.6rem",
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-            <span className="pulse-indicator" />
-            <span style={{ fontWeight: 600, color: "#fff", textTransform: "uppercase", fontSize: "0.75rem", letterSpacing: "0.15em" }}>
-              24/7 Immediate Bereavement Dispatch:
-            </span>
-            <span style={{ color: "var(--gold-primary)", fontSize: "0.78rem" }}>083 552 5448 / 081 708 4102</span>
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", flexWrap: "wrap" }}>
-            <a
-              href="tel:0100236703"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.35rem",
-                color: "var(--text-muted)",
-                fontSize: "0.78rem",
-              }}
-            >
-              Office: <strong style={{ color: "#fff" }}>010 023 6703</strong>
-            </a>
-            <span style={{ opacity: 0.2 }}>|</span>
-            <span style={{ color: "var(--text-muted)", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>
-              Ebony Park, Midrand
-            </span>
-            <span style={{ opacity: 0.2 }}>|</span>
-            <a
-              href="https://wa.me/27835525448"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.35rem",
-                color: "var(--gold-light)",
-                fontWeight: 600,
-                fontSize: "0.78rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-              }}
-            >
-              <MessageSquare size={13} color="var(--gold-primary)" /> WhatsApp 24/7
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Architectural Navigation Bar */}
       <nav
         style={{
