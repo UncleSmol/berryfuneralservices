@@ -12,8 +12,12 @@ import {
   Truck,
   Landmark,
   FileCheck,
+  MessageSquare,
+  Mail,
+  Phone,
 } from "lucide-react";
 import SectionImageShuffler from "@/components/SectionImageShuffler";
+import { getServiceInquiryTemplates } from "@/utils/contactTemplates";
 
 interface ServicesSectionProps {
   onOpenArrangementModal: (serviceType?: string) => void;
@@ -159,10 +163,65 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
   ];
 
   const currentService = services.find((s) => s.id === activeTab) || services[0];
+  const serviceTemplates = getServiceInquiryTemplates(currentService.name);
 
   return (
-    <section id="services" style={{ padding: "7rem 0", background: "#000000", position: "relative" }}>
-      <div className="container">
+    <section
+      id="services"
+      style={{
+        padding: "7rem 0",
+        background: "#000000",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Background Architectural Grid Lines & Dark Scrim */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          pointerEvents: "none",
+          backgroundImage:
+            "linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+          maskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
+          zIndex: 1,
+        }}
+      />
+
+      {/* Atmospheric Shuffling Background with Scroll Fade (Hero-style dynamic photography) */}
+      <div
+        style={{
+          position: "absolute",
+          inset: "-10% 0",
+          zIndex: 0,
+          pointerEvents: "none",
+        }}
+      >
+        <SectionImageShuffler
+          images={[
+            "/images/african-funeral-directors.jpg",
+            "/images/african-memorial-service.jpg",
+            "/images/mercedes-fleet.jpg",
+            "/images/hero-chapel.jpg",
+            "/images/pexels-cathedral-stainedglass.jpg",
+          ]}
+          alts={[
+            "Berry Funeral Services professional funeral undertakers and cortege",
+            "Dignified South African marquee memorial service",
+            "White Mercedes cortege fleet",
+            "Dignified Chapel Setting",
+            "Cathedral Stained Glass",
+          ]}
+          intervalMs={4800}
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.72) 40%, rgba(0,0,0,0.96) 100%)"
+          showIndicators={false}
+          enableScrollFade={true}
+        />
+      </div>
+
+      <div className="container" style={{ position: "relative", zIndex: 2 }}>
         {/* Header */}
         <div style={{ marginBottom: "4rem", maxWidth: "840px" }}>
           <h2 className="section-title" style={{ textAlign: "left", marginBottom: "1rem" }}>
@@ -331,14 +390,43 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
                 Tailored burial solutions and packages with the best competitive price and uncompromised dignity.
               </p>
 
-              <button
-                onClick={() => onOpenArrangementModal(currentService.name)}
-                className="btn-primary"
-                style={{ width: "100%", justifyContent: "center" }}
-              >
-                <span>{currentService.cta}</span>
-                <ArrowRight size={15} />
-              </button>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                <button
+                  onClick={() => onOpenArrangementModal(currentService.name)}
+                  className="btn-primary"
+                  style={{ width: "100%", justifyContent: "center" }}
+                >
+                  <span>{currentService.cta}</span>
+                  <ArrowRight size={15} />
+                </button>
+
+                <a
+                  href={serviceTemplates.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                  style={{
+                    width: "100%",
+                    justifyContent: "center",
+                    background: "#25D366",
+                    color: "#000000",
+                    borderColor: "#25D366",
+                    fontWeight: 700,
+                  }}
+                >
+                  <MessageSquare size={16} />
+                  <span>WhatsApp Inquire: {currentService.name}</span>
+                </a>
+
+                <a
+                  href={serviceTemplates.emailUrl}
+                  className="btn-outline"
+                  style={{ width: "100%", justifyContent: "center", fontSize: "0.82rem" }}
+                >
+                  <Mail size={14} />
+                  <span>Email Official Inquiry</span>
+                </a>
+              </div>
 
               <div style={{ marginTop: "1.2rem", fontSize: "0.8rem", color: "var(--gold-primary)", letterSpacing: "0.08em" }}>
                 24/7 Helpline: <strong>083 552 5448</strong>

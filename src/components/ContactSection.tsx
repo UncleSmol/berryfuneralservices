@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send, MessageSquare, Check, Globe } from "lucide-react";
 import SectionImageShuffler from "@/components/SectionImageShuffler";
+import { BERRY_CONTACT, getContactFormTemplates, createWhatsAppUrl } from "@/utils/contactTemplates";
 
 export default function ContactSection() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [lastAction, setLastAction] = useState<"whatsapp" | "email">("whatsapp");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -15,30 +17,43 @@ export default function ContactSection() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setLastAction("whatsapp");
+    const { whatsappUrl } = getContactFormTemplates(formData);
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    setFormSubmitted(true);
+  };
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setLastAction("email");
+    const { emailUrl } = getContactFormTemplates(formData);
+    window.location.href = emailUrl;
     setFormSubmitted(true);
   };
 
   return (
     <section id="contact" style={{ padding: "7rem 0", background: "#000000", position: "relative", overflow: "hidden" }}>
       {/* Background Sanctuary Atmosphere Shuffler with Scroll Fade */}
-      <div style={{ position: "absolute", inset: 0, opacity: 0.18, pointerEvents: "none" }}>
+      <div style={{ position: "absolute", inset: 0, opacity: 0.22, pointerEvents: "none" }}>
         <SectionImageShuffler
           images={[
+            "/images/african-funeral-directors.jpg",
+            "/images/african-memorial-service.jpg",
+            "/images/african-family-memorial.jpg",
             "/images/hero-image-homepage.jpg",
             "/images/hero-image2-homepage.jpg",
-            "/images/pexels-cathedral-stainedglass.jpg",
-            "/images/pexels-sanctuary-hall.jpg",
           ]}
           alts={[
+            "Berry Funeral Services professional funeral undertakers",
+            "Solemn marquee memorial service in Midrand",
+            "Dignified South African family memorial",
             "Berry Funeral Services Midrand Headquarters",
             "Solemn Memorial Chapel",
-            "Cathedral Stained Glass",
-            "Sanctuary Hall",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.98) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.80) 50%, rgba(0,0,0,0.96) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -185,13 +200,45 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <Clock size={16} color="var(--gold-primary)" style={{ flexShrink: 0 }} />
-                  <div>
-                    <strong style={{ color: "#fff", display: "block", fontSize: "0.82rem" }}>Operating Schedule</strong>
-                    <span style={{ color: "var(--text-secondary)", fontSize: "0.88rem" }}>
-                      24 Hours • 7 Days • 365 Days a Year
-                    </span>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                  <Clock size={16} color="var(--gold-primary)" style={{ marginTop: "3px", flexShrink: 0 }} />
+                  <div style={{ width: "100%" }}>
+                    <strong style={{ color: "#fff", display: "block", fontSize: "0.82rem", marginBottom: "0.5rem" }}>
+                      Office Operating Schedule
+                    </strong>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem", fontSize: "0.82rem" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <span style={{ color: "var(--text-secondary)" }}>Monday</span>
+                        <span style={{ color: "#ffffff", fontWeight: 600 }}>9:00 AM – 6:00 PM</span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <span style={{ color: "var(--text-secondary)" }}>Tuesday</span>
+                        <span style={{ color: "#ef4444", fontWeight: 600 }}>Closed</span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <span style={{ color: "var(--text-secondary)" }}>Wednesday</span>
+                        <span style={{ color: "#ffffff", fontWeight: 600 }}>9:00 AM – 6:00 PM</span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <span style={{ color: "var(--text-secondary)" }}>Thursday</span>
+                        <span style={{ color: "#ffffff", fontWeight: 600 }}>9:00 AM – 6:00 PM</span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <span style={{ color: "var(--text-secondary)" }}>Friday</span>
+                        <span style={{ color: "#ffffff", fontWeight: 600 }}>9:00 AM – 6:00 PM</span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <span style={{ color: "var(--text-secondary)" }}>Saturday</span>
+                        <span style={{ color: "#ef4444", fontWeight: 600 }}>Closed</span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <span style={{ color: "var(--text-secondary)" }}>Sunday</span>
+                        <span style={{ color: "#ef4444", fontWeight: 600 }}>Closed</span>
+                      </div>
+                    </div>
+                    <div style={{ marginTop: "0.6rem", fontSize: "0.78rem", color: "var(--gold-primary)", lineHeight: 1.4 }}>
+                      • 24/7 Bereavement Dispatch & Body Removal active round-the-clock everyday.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -232,22 +279,60 @@ export default function ContactSection() {
                   ✓
                 </div>
                 <h4 style={{ fontSize: "1.4rem", color: "#ffffff", marginBottom: "0.75rem" }}>
-                  Inquiry Received with Reverence
+                  Inquiry Template Prepared
                 </h4>
                 <p style={{ fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: "480px", margin: "0 auto 2rem auto" }}>
-                  Thank you, {formData.name || "valued client"}. Berry Funeral Services has logged your details.
-                  We will contact you on <strong>{formData.phone || "provided number"}</strong> immediately.
+                  Thank you, <strong>{formData.name || "valued client"}</strong>. Your consultation details have been compiled for Director Berry Mofulatsi.
+                  Click below to open the conversation directly in WhatsApp or launch your email app:
                 </p>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", maxWidth: "380px", margin: "0 auto 2rem auto" }}>
+                  <a
+                    href={getContactFormTemplates(formData).whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                    style={{
+                      background: "#25D366",
+                      color: "#000000",
+                      borderColor: "#25D366",
+                      fontWeight: 700,
+                      justifyContent: "center",
+                    }}
+                  >
+                    <MessageSquare size={16} />
+                    <span>Open in WhatsApp (Direct Chat)</span>
+                  </a>
+
+                  <a
+                    href={getContactFormTemplates(formData).emailUrl}
+                    className="btn-outline"
+                    style={{ justifyContent: "center" }}
+                  >
+                    <Mail size={16} />
+                    <span>Open in Email App</span>
+                  </a>
+
+                  <a
+                    href="tel:0835525448"
+                    className="btn-outline"
+                    style={{ justifyContent: "center", borderColor: "rgba(255,255,255,0.15)" }}
+                  >
+                    <Phone size={14} />
+                    <span>Call 083 552 5448</span>
+                  </a>
+                </div>
+
                 <button
                   onClick={() => setFormSubmitted(false)}
                   className="btn-outline"
-                  style={{ fontSize: "0.82rem" }}
+                  style={{ fontSize: "0.82rem", borderColor: "rgba(255,255,255,0.1)" }}
                 >
-                  Submit Another Inquiry
+                  Write Another Message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+              <form onSubmit={handleWhatsAppSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
                 <div>
                   <label style={{ display: "block", fontSize: "0.82rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-secondary)", marginBottom: "0.4rem" }}>
                     Your Full Name *
@@ -393,14 +478,35 @@ export default function ContactSection() {
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="btn-primary"
-                  style={{ width: "100%", padding: "1.05rem", fontSize: "0.88rem", marginTop: "0.5rem" }}
-                >
-                  <Send size={15} />
-                  <span>Transmit Inquiry to Berry Funerals</span>
-                </button>
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "0.5rem" }}>
+                  <button
+                    type="submit"
+                    className="btn-primary"
+                    style={{
+                      width: "100%",
+                      padding: "1.05rem",
+                      fontSize: "0.9rem",
+                      background: "#25D366",
+                      color: "#000000",
+                      borderColor: "#25D366",
+                      fontWeight: 700,
+                      justifyContent: "center",
+                    }}
+                  >
+                    <MessageSquare size={16} />
+                    <span>Send via WhatsApp (Direct Chat)</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleEmailSubmit}
+                    className="btn-outline"
+                    style={{ width: "100%", padding: "0.95rem", fontSize: "0.86rem", justifyContent: "center" }}
+                  >
+                    <Mail size={15} />
+                    <span>Launch Email App (Ready Template)</span>
+                  </button>
+                </div>
               </form>
             )}
           </div>

@@ -11,8 +11,10 @@ import {
   ShieldCheck,
   Clock,
   Compass,
+  MessageSquare,
 } from "lucide-react";
 import SectionImageShuffler from "@/components/SectionImageShuffler";
+import { BERRY_CONTACT, createWhatsAppUrl } from "@/utils/contactTemplates";
 
 interface HeroProps {
   onOpenArrangementModal: (serviceType?: string) => void;
@@ -82,16 +84,20 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
       >
         <SectionImageShuffler
           images={[
+            "/images/african-funeral-directors.jpg",
+            "/images/african-family-memorial.jpg",
             "/images/hero-image-homepage.jpg",
             "/images/hero-image2-homepage.jpg",
+            "/images/african-memorial-service.jpg",
             "/images/pexels-cathedral-stainedglass.jpg",
-            "/images/pexels-sanctuary-hall.jpg",
           ]}
           alts={[
+            "Berry Funeral Services professional funeral undertakers and Mercedes cortege",
+            "Dignified South African family memorial in sanctuary",
             "Berry Funeral Services Sanctuary",
             "Memorial Chapel Service",
+            "Solemn outdoor gravesite marquee service",
             "Cathedral Stained Glass Reverence",
-            "Sacred Sanctuary Hall",
           ]}
           intervalMs={4800}
           overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.98) 100%)"
@@ -207,16 +213,24 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
                 display: "flex",
                 flexWrap: "wrap",
                 alignItems: "center",
-                gap: "1rem",
+                gap: "0.8rem",
               }}
             >
-              <button
-                onClick={() => onScrollToSection("contact")}
+              <a
+                href={createWhatsAppUrl("Hello Berry Funeral Services, I would like to inquire about your funeral services and burial policies.")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary"
+                style={{
+                  background: "#25D366",
+                  color: "#000000",
+                  borderColor: "#25D366",
+                  fontWeight: 700,
+                }}
               >
-                <span>Contact Us</span>
-                <ChevronRight size={16} />
-              </button>
+                <MessageSquare size={16} />
+                <span>Chat on WhatsApp (24/7)</span>
+              </a>
 
               <a
                 href="tel:0835525448"
@@ -232,6 +246,15 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
               >
                 <span>Explore Policies</span>
                 <ArrowDownRight size={15} color="var(--gold-primary)" />
+              </button>
+
+              <button
+                onClick={() => onScrollToSection("contact")}
+                className="btn-outline"
+                style={{ borderColor: "rgba(255,255,255,0.15)" }}
+              >
+                <span>Contact Details</span>
+                <ChevronRight size={16} />
               </button>
             </div>
           </div>

@@ -157,23 +157,37 @@ export default function Footer() {
             <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
               <div>
                 <a href="tel:0835525448" style={{ color: "var(--gold-light)", fontWeight: 700, fontSize: "0.95rem" }}>
-                  083 552 5448
+                  +27 83 552 5448
                 </a>
                 <span style={{ color: "var(--text-muted)", marginLeft: "0.5rem" }}>/</span>
                 <a href="tel:0817084102" style={{ color: "#fff", fontWeight: 700, fontSize: "0.95rem", marginLeft: "0.5rem" }}>
                   081 708 4102
                 </a>
               </div>
-              <div style={{ color: "var(--text-muted)" }}>
+              <div>
+                <a
+                  href="https://wa.me/27835525448?text=Hello%20Berry%20Funeral%20Services%2C%20I%20would%20like%20to%20make%20an%20inquiry."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#25D366", fontWeight: 600, fontSize: "0.88rem" }}
+                >
+                  WhatsApp: +27 83 552 5448
+                </a>
+              </div>
+              <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>
                 Landline: <strong style={{ color: "#fff" }}>010 023 6703</strong>
               </div>
               <div>
-                <a href="mailto:berrymof@gmail.com" style={{ color: "var(--text-secondary)" }}>
+                <a href="mailto:berrymof@gmail.com" style={{ color: "var(--text-secondary)", fontSize: "0.88rem" }}>
                   berrymof@gmail.com
                 </a>
               </div>
-              <div style={{ color: "var(--text-secondary)", lineHeight: 1.5 }}>
+              <div style={{ color: "var(--text-secondary)", fontSize: "0.82rem", lineHeight: 1.5 }}>
                 511 Bottlebrush Cres, Ebony Park, Midrand, 1685
+              </div>
+              <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "0.5rem", fontSize: "0.78rem", color: "var(--text-muted)" }}>
+                <div>Office: Mon, Wed–Fri 9am–6pm (Tue, Sat, Sun Closed)</div>
+                <div style={{ color: "var(--gold-primary)", marginTop: "2px" }}>Dispatch: 24/7/365 Non-stop</div>
               </div>
             </div>
           </div>

@@ -30,29 +30,62 @@ export default function Testimonials() {
   ];
 
   return (
-    <section style={{ padding: "7rem 0", background: "#050505", position: "relative", overflow: "hidden" }}>
-      {/* Background Reverence Atmosphere Shuffler with Scroll Fade */}
-      <div style={{ position: "absolute", inset: 0, opacity: 0.16, pointerEvents: "none" }}>
+    <section
+      id="testimonials"
+      style={{
+        padding: "7rem 0",
+        background: "#000000",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Background Architectural Grid Lines & Dark Scrim */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          pointerEvents: "none",
+          backgroundImage:
+            "linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+          maskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
+          zIndex: 1,
+        }}
+      />
+
+      {/* Atmospheric Shuffling Background with Scroll Fade (Hero-style dynamic photography) */}
+      <div
+        style={{
+          position: "absolute",
+          inset: "-10% 0",
+          zIndex: 0,
+          pointerEvents: "none",
+        }}
+      >
         <SectionImageShuffler
           images={[
-            "/images/pexels-misty-pathway.jpg",
-            "/images/pexels-white-roses.jpg",
-            "/images/pexels-consoling-hands.jpg",
-            "/images/pexels-serene-cemetery.jpg",
+            "/images/african-family-memorial.jpg",
+            "/images/african-funeral-directors.jpg",
+            "/images/african-memorial-service.jpg",
+            "/images/african-memorial-vigil.jpg",
+            "/images/pexels-cathedral-stainedglass.jpg",
           ]}
           alts={[
-            "Peaceful misty morning pathway",
-            "White roses sympathy flowers",
-            "Consoling hands of bereavement care",
-            "Serene cemetery memorial garden",
+            "Grieving South African family comforted in sanctum",
+            "Professional funeral directors beside Mercedes cortege",
+            "Dignified outdoor marquee memorial service",
+            "Solemn candlelight vigil tribute",
+            "Cathedral Stained Glass",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.85) 50%, rgba(5,5,5,0.98) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.96) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
       </div>
-      <div className="container">
+
+      <div className="container" style={{ position: "relative", zIndex: 2 }}>
         {/* Header */}
         <div style={{ marginBottom: "4rem", maxWidth: "840px" }}>
           <h2 className="section-title" style={{ textAlign: "left", marginBottom: "1rem" }}>

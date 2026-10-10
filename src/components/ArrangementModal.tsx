@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, Check, Calendar, Phone, Clock, ArrowRight } from "lucide-react";
+import { X, Check, Calendar, Phone, Clock, ArrowRight, MessageSquare, Mail } from "lucide-react";
+import { getArrangementTemplates } from "@/utils/contactTemplates";
 
 interface ArrangementModalProps {
   isOpen: boolean;
@@ -31,6 +32,18 @@ export default function ArrangementModal({
     e.preventDefault();
     const ref = `BFS-${Math.floor(100000 + Math.random() * 900000)}`;
     setReferenceId(ref);
+    const { whatsappUrl } = getArrangementTemplates({
+      referenceId: ref,
+      fullName,
+      phone,
+      service,
+      urgency,
+      consultationMode,
+      notes,
+      initialEstimate,
+    });
+    // Initiate WhatsApp conversation directly
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     setStep(3);
   };
 
@@ -327,42 +340,92 @@ export default function ArrangementModal({
         )}
 
         {/* Step 3: Success Confirmation */}
-        {step === 3 && (
-          <div style={{ textAlign: "center", padding: "1.5rem 0" }}>
-            <div style={{ fontSize: "2.5rem", color: "var(--gold-primary)", marginBottom: "1rem" }}>
-              ✓
+        {step === 3 && (() => {
+          const { whatsappUrl, emailUrl } = getArrangementTemplates({
+            referenceId,
+            fullName,
+            phone,
+            service,
+            urgency,
+            consultationMode,
+            notes,
+            initialEstimate,
+          });
+
+          return (
+            <div style={{ textAlign: "center", padding: "1.5rem 0" }}>
+              <div style={{ fontSize: "2.5rem", color: "var(--gold-primary)", marginBottom: "1rem" }}>
+                ✓
+              </div>
+
+              <h3 style={{ fontSize: "1.8rem", color: "#ffffff", marginBottom: "0.5rem" }}>
+                Your Arrangement Has Been Prepared
+              </h3>
+              <div
+                style={{
+                  display: "inline-block",
+                  padding: "0.4rem 1.2rem",
+                  background: "#111111",
+                  border: "1px solid var(--gold-primary)",
+                  color: "var(--gold-light)",
+                  fontWeight: 700,
+                  fontSize: "1.1rem",
+                  letterSpacing: "0.1em",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                REFERENCE: {referenceId}
+              </div>
+
+              <p style={{ color: "var(--text-secondary)", fontSize: "1rem", lineHeight: 1.8, marginBottom: "2rem", maxWidth: "520px", margin: "0 auto 2rem auto" }}>
+                Thank you, <strong>{fullName || "valued client"}</strong>. Your arrangement for{" "}
+                <strong>{service}</strong> is ready. Connect directly with Director Berry Mofulatsi via WhatsApp or your email client below:
+              </p>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", maxWidth: "400px", margin: "0 auto 2rem auto" }}>
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                  style={{
+                    background: "#25D366",
+                    color: "#000000",
+                    borderColor: "#25D366",
+                    fontWeight: 700,
+                    justifyContent: "center",
+                    padding: "0.95rem",
+                  }}
+                >
+                  <MessageSquare size={16} />
+                  <span>Send via WhatsApp (Direct Chat)</span>
+                </a>
+
+                <a
+                  href={emailUrl}
+                  className="btn-outline"
+                  style={{ justifyContent: "center", padding: "0.95rem" }}
+                >
+                  <Mail size={16} />
+                  <span>Send via Email App</span>
+                </a>
+
+                <a
+                  href="tel:0835525448"
+                  className="btn-outline"
+                  style={{ justifyContent: "center", borderColor: "rgba(255,255,255,0.15)", padding: "0.85rem" }}
+                >
+                  <Phone size={15} />
+                  <span>Call Director Berry: 083 552 5448</span>
+                </a>
+              </div>
+
+              <button onClick={handleReset} className="btn-outline" style={{ padding: "0.75rem 2rem", fontSize: "0.85rem" }}>
+                <span>Return to Portal</span>
+              </button>
             </div>
-
-            <h3 style={{ fontSize: "1.8rem", color: "#ffffff", marginBottom: "0.5rem" }}>
-              Your Family is in Caring Hands
-            </h3>
-            <div
-              style={{
-                display: "inline-block",
-                padding: "0.4rem 1.2rem",
-                background: "#111111",
-                border: "1px solid var(--gold-primary)",
-                color: "var(--gold-light)",
-                fontWeight: 700,
-                fontSize: "1.1rem",
-                letterSpacing: "0.1em",
-                marginBottom: "1.5rem",
-              }}
-            >
-              REFERENCE: {referenceId}
-            </div>
-
-            <p style={{ color: "var(--text-secondary)", fontSize: "1rem", lineHeight: 1.8, marginBottom: "2rem", maxWidth: "520px", margin: "0 auto 2rem auto" }}>
-              Thank you, {fullName || "valued client"}. Berry Funeral Services has logged your inquiry for{" "}
-              <strong>{service}</strong>. Director Berry Mofulatsi or our dispatch team will phone you on{" "}
-              <strong>{phone}</strong> immediately.
-            </p>
-
-            <button onClick={handleReset} className="btn-primary" style={{ padding: "0.85rem 2.5rem" }}>
-              <span>Return to Portal</span>
-            </button>
-          </div>
-        )}
+          );
+        })()}
       </div>
     </div>
   );

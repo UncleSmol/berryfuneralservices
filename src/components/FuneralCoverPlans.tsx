@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { ShieldCheck, Check, ArrowRight, ArrowUpRight, Sparkles, Users } from "lucide-react";
+import { ShieldCheck, Check, ArrowRight, ArrowUpRight, Sparkles, Users, MessageSquare, Mail } from "lucide-react";
 import SectionImageShuffler from "@/components/SectionImageShuffler";
+import { getPolicyInquiryTemplates } from "@/utils/contactTemplates";
 
 interface FuneralCoverPlansProps {
   onOpenArrangementModal: (planName?: string) => void;
@@ -169,18 +170,20 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
       >
         <SectionImageShuffler
           images={[
+            "/images/african-memorial-service.jpg",
+            "/images/african-family-memorial.jpg",
             "/images/hero-image-homepage.jpg",
             "/images/hero-image2-homepage.jpg",
             "/images/hero-chapel.jpg",
             "/images/pexels-cathedral-stainedglass.jpg",
-            "/images/pexels-sanctuary-hall.jpg",
           ]}
           alts={[
+            "Solemn outdoor gravesite marquee service in Midrand",
+            "Dignified South African family memorial in sanctum",
             "Berry Funeral Services Sanctuary",
             "Memorial Chapel Service",
             "Dignified Sanctuary Chapel",
             "Cathedral Stained Glass Reverence",
-            "Sacred Sanctuary Hall",
           ]}
           intervalMs={4800}
           overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.96) 100%)"
@@ -389,13 +392,30 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                     ))}
                   </div>
 
-                  <button
-                    onClick={() => onOpenArrangementModal("No Waiting Period Plan (R3,000)")}
-                    className="btn-primary"
-                  >
-                    <span>Join No Waiting Period Plan</span>
-                    <ArrowRight size={15} />
-                  </button>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem" }}>
+                    <button
+                      onClick={() => onOpenArrangementModal("No Waiting Period Plan (R3,000)")}
+                      className="btn-primary"
+                    >
+                      <span>Join No Waiting Period Plan</span>
+                      <ArrowRight size={15} />
+                    </button>
+                    <a
+                      href={getPolicyInquiryTemplates("No Waiting Period Plan", "R3,000", "From R260/m").whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                      style={{
+                        background: "#25D366",
+                        color: "#000000",
+                        borderColor: "#25D366",
+                        fontWeight: 700,
+                      }}
+                    >
+                      <MessageSquare size={15} />
+                      <span>WhatsApp Inquire</span>
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -514,14 +534,32 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                     ))}
                   </div>
 
-                  <button
-                    onClick={() => onOpenArrangementModal("Executive Plan (R10,000)")}
-                    className="btn-outline"
-                    style={{ width: "100%", justifyContent: "center" }}
-                  >
-                    <span>Apply for Executive Plan</span>
-                    <ArrowRight size={15} />
-                  </button>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem" }}>
+                    <button
+                      onClick={() => onOpenArrangementModal("Executive Plan (R10,000)")}
+                      className="btn-outline"
+                      style={{ flex: 1, minWidth: "160px", justifyContent: "center" }}
+                    >
+                      <span>Apply for Executive Plan</span>
+                      <ArrowRight size={15} />
+                    </button>
+                    <a
+                      href={getPolicyInquiryTemplates("Executive Plan", "R10,000", "From R550/m").whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                      style={{
+                        background: "#25D366",
+                        color: "#000000",
+                        borderColor: "#25D366",
+                        fontWeight: 700,
+                        padding: "0.6rem 1rem",
+                      }}
+                    >
+                      <MessageSquare size={15} />
+                      <span>WhatsApp</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

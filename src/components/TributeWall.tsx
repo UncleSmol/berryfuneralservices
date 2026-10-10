@@ -34,7 +34,7 @@ export default function TributeWall() {
       dateOfPassing: "3 October 2026",
       serviceDate: "Saturday, 11 October 2026 • 09:00 AM",
       serviceLocation: "Ebony Park Community Hall & Midrand Cemetery",
-      image: "/images/memorial-candle.jpg",
+      image: "/images/african-memorial-vigil.jpg",
       tributeSnippet:
         "A cherished matriarch, community pillar, and devoted teacher whose warm laughter and tireless generosity shaped generations in Orlando West and Midrand.",
       candles: 142,
@@ -85,7 +85,7 @@ export default function TributeWall() {
       dateOfPassing: "28 September 2026",
       serviceDate: "Interment Completed • Memorial Archive Active",
       serviceLocation: "Midrand Cemetery & Family Residence",
-      image: "/images/fleet.jpg",
+      image: "/images/african-family-memorial.jpg",
       tributeSnippet:
         "Centred in unconditional love, wisdom, and faith. A golden grandmother whose gentle spirit will illuminate our lineage forever.",
       candles: 215,
@@ -154,29 +154,62 @@ export default function TributeWall() {
   const activeTribute = tributes.find((t) => t.id === selectedTributeId) || tributes[0];
 
   return (
-    <section id="tributes" style={{ padding: "7rem 0", background: "#000000", position: "relative", overflow: "hidden" }}>
-      {/* Background Sacred Atmosphere Shuffler with Scroll Fade */}
-      <div style={{ position: "absolute", inset: 0, opacity: 0.18, pointerEvents: "none" }}>
+    <section
+      id="tributes"
+      style={{
+        padding: "7rem 0",
+        background: "#000000",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Background Architectural Grid Lines & Dark Scrim */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          pointerEvents: "none",
+          backgroundImage:
+            "linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+          maskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
+          zIndex: 1,
+        }}
+      />
+
+      {/* Atmospheric Shuffling Background with Scroll Fade (Hero-style dynamic photography) */}
+      <div
+        style={{
+          position: "absolute",
+          inset: "-10% 0",
+          zIndex: 0,
+          pointerEvents: "none",
+        }}
+      >
         <SectionImageShuffler
           images={[
+            "/images/african-memorial-vigil.jpg",
+            "/images/african-memorial-service.jpg",
+            "/images/african-family-memorial.jpg",
+            "/images/pexels-cathedral-stainedglass.jpg",
             "/images/pexels-candles-bokeh.jpg",
-            "/images/pexels-memorial-flowers.jpg",
-            "/images/pexels-candlelight-vigil.jpg",
-            "/images/pexels-tribute-portrait.jpg",
           ]}
           alts={[
-            "Sacred Memorial Candlelight Bokeh",
-            "Memorial Floral Condolences",
-            "Candlelight Vigil in Sanctum",
-            "Serene Memorial Remembrance",
+            "Candlelight vigil in loving memory of African family elder",
+            "Dignified South African marquee funeral gathering",
+            "Family comfort during sacred bereavement service",
+            "Cathedral Stained Glass Reverence",
+            "Warm vigil candle glow",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.98) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.96) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
       </div>
-      <div className="container">
+
+      <div className="container" style={{ position: "relative", zIndex: 2 }}>
         {/* Header */}
         <div style={{ marginBottom: "4rem", maxWidth: "860px" }}>
           <h2 className="section-title" style={{ textAlign: "left", marginBottom: "1rem" }}>

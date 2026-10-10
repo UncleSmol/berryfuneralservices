@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, Phone, FileCheck, HeartHandshake, UserCheck, AlertCircle } from "lucide-react";
+import { Check, Phone, FileCheck, HeartHandshake, UserCheck, AlertCircle, MessageSquare, Mail } from "lucide-react";
 import SectionImageShuffler from "@/components/SectionImageShuffler";
+import { getImmediateNeedTemplates } from "@/utils/contactTemplates";
 
 export default function ImmediateGuidance() {
   const [activeStep, setActiveStep] = useState(0);
+  const emergencyTemplates = getImmediateNeedTemplates();
 
   const steps = [
     {
@@ -51,8 +53,60 @@ export default function ImmediateGuidance() {
   ];
 
   return (
-    <section id="guidance" style={{ padding: "7rem 0", background: "#050505", position: "relative" }}>
-      <div className="container">
+    <section
+      id="guidance"
+      style={{
+        padding: "7rem 0",
+        background: "#000000",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Background Architectural Grid Lines & Dark Scrim */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          pointerEvents: "none",
+          backgroundImage:
+            "linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+          maskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
+          zIndex: 1,
+        }}
+      />
+
+      {/* Atmospheric Shuffling Background with Scroll Fade (Hero-style dynamic photography) */}
+      <div
+        style={{
+          position: "absolute",
+          inset: "-10% 0",
+          zIndex: 0,
+          pointerEvents: "none",
+        }}
+      >
+        <SectionImageShuffler
+          images={[
+            "/images/african-family-memorial.jpg",
+            "/images/african-memorial-service.jpg",
+            "/images/pexels-cathedral-stainedglass.jpg",
+            "/images/pexels-sanctuary-hall.jpg",
+          ]}
+          alts={[
+            "Family comfort during sacred bereavement",
+            "Dignified South African memorial service gathering",
+            "Cathedral Stained Glass Reverence",
+            "Sanctuary Peace",
+          ]}
+          intervalMs={5000}
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.72) 40%, rgba(0,0,0,0.96) 100%)"
+          showIndicators={false}
+          enableScrollFade={true}
+        />
+      </div>
+
+      <div className="container" style={{ position: "relative", zIndex: 2 }}>
         {/* Header */}
         <div style={{ marginBottom: "4rem", maxWidth: "840px" }}>
           <h2 className="section-title" style={{ textAlign: "left", marginBottom: "1rem" }}>
@@ -188,14 +242,44 @@ export default function ImmediateGuidance() {
                   <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginBottom: "1.25rem", lineHeight: 1.5 }}>
                     Our directors and mortuary drivers are on call right now across Midrand, Gauteng, and nationwide.
                   </p>
-                  <a
-                    href="tel:0835525448"
-                    className="btn-primary"
-                    style={{ width: "100%", justifyContent: "center" }}
-                  >
-                    <Phone size={15} />
-                    <span>Call 083 552 5448</span>
-                  </a>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                    <a
+                      href={emergencyTemplates.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                      style={{
+                        width: "100%",
+                        justifyContent: "center",
+                        background: "#25D366",
+                        color: "#000000",
+                        borderColor: "#25D366",
+                        fontWeight: 700,
+                      }}
+                    >
+                      <MessageSquare size={16} />
+                      <span>WhatsApp Dispatch (24/7)</span>
+                    </a>
+
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
+                      <a
+                        href="tel:0835525448"
+                        className="btn-outline"
+                        style={{ justifyContent: "center", fontSize: "0.8rem", padding: "0.6rem 0.4rem" }}
+                      >
+                        <Phone size={14} />
+                        <span>Call 083 552 5448</span>
+                      </a>
+                      <a
+                        href={emergencyTemplates.emailUrl}
+                        className="btn-outline"
+                        style={{ justifyContent: "center", fontSize: "0.8rem", padding: "0.6rem 0.4rem" }}
+                      >
+                        <Mail size={14} />
+                        <span>Email Dispatch</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
