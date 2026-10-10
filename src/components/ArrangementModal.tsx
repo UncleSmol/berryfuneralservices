@@ -60,7 +60,7 @@ export default function ArrangementModal({
         position: "fixed",
         inset: 0,
         zIndex: 9999,
-        background: "rgba(0, 0, 0, 0.92)",
+        background: "rgba(15, 23, 42, 0.65)",
         backdropFilter: "blur(14px)",
         WebkitBackdropFilter: "blur(14px)",
         display: "flex",
@@ -76,9 +76,9 @@ export default function ArrangementModal({
           maxWidth: "680px",
           maxHeight: "92vh",
           overflowY: "auto",
-          background: "#080808",
-          border: "1px solid var(--border-gold-strong)",
-          boxShadow: "var(--shadow-deep)",
+          background: "#ffffff",
+          border: "1px solid var(--border-gold-hairline)",
+          boxShadow: "0 25px 60px rgba(0, 0, 0, 0.22)",
           padding: "3rem",
           position: "relative",
         }}
@@ -90,15 +90,16 @@ export default function ArrangementModal({
             position: "absolute",
             top: "1.5rem",
             right: "1.5rem",
-            background: "transparent",
-            border: "1px solid var(--border-dark-subtle)",
-            color: "var(--text-muted)",
+            background: "#ffffff",
+            border: "1px solid var(--border-gold-hairline)",
+            color: "var(--text-secondary)",
             width: "36px",
             height: "36px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
+            boxShadow: "0 2px 6px rgba(0,0,0,0.04)",
           }}
           aria-label="Close modal"
         >
@@ -115,8 +116,8 @@ export default function ArrangementModal({
                   borderRadius: "4px",
                   display: "inline-flex",
                   alignItems: "center",
-                  border: "1px solid rgba(212, 175, 55, 0.4)",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.4)",
+                  border: "1px solid rgba(184, 134, 11, 0.3)",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
                 }}
               >
                 <Image
@@ -129,12 +130,12 @@ export default function ArrangementModal({
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                 <span className="pulse-indicator" />
-                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-primary)", fontWeight: 700 }}>
+                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-deep)", fontWeight: 700 }}>
                   BERRY CONCIERGE
                 </span>
               </div>
             </div>
-            <h2 style={{ fontSize: "2rem", color: "#ffffff", lineHeight: 1.2 }}>
+            <h2 style={{ fontSize: "2rem", color: "var(--text-primary)", lineHeight: 1.2 }}>
               {step === 1 ? "Arrange a Dignified Service" : "Your Consultation Preferences"}
             </h2>
             {initialEstimate && (
@@ -142,11 +143,11 @@ export default function ArrangementModal({
                 style={{
                   marginTop: "0.8rem",
                   display: "inline-block",
-                  background: "#111111",
+                  background: "var(--bg-obsidian)",
                   border: "1px solid var(--border-gold-hairline)",
                   padding: "0.35rem 0.9rem",
                   fontSize: "0.82rem",
-                  color: "var(--gold-light)",
+                  color: "var(--gold-deep)",
                   letterSpacing: "0.08em",
                 }}
               >
@@ -160,7 +161,7 @@ export default function ArrangementModal({
         {step === 1 && (
           <div>
             <div style={{ marginBottom: "2rem" }}>
-              <label style={{ display: "block", fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--gold-primary)", marginBottom: "0.8rem", fontWeight: 700 }}>
+              <label style={{ display: "block", fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--gold-deep)", marginBottom: "0.8rem", fontWeight: 700 }}>
                 Select Service or Policy Plan
               </label>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.6rem" }}>
@@ -189,10 +190,11 @@ export default function ArrangementModal({
                       fontWeight: 700,
                       letterSpacing: "0.06em",
                       textTransform: "uppercase",
-                      background: service === s ? "var(--gold-primary)" : "#000000",
-                      color: service === s ? "#000000" : "#cbd5e1",
-                      border: service === s ? "1px solid var(--gold-light)" : "1px solid var(--border-dark-subtle)",
+                      background: service === s ? "var(--gold-primary)" : "var(--bg-obsidian)",
+                      color: service === s ? "#ffffff" : "var(--text-primary)",
+                      border: service === s ? "1px solid var(--gold-primary)" : "1px solid var(--border-gold-hairline)",
                       cursor: "pointer",
+                      transition: "all 0.2s ease",
                     }}
                   >
                     {s}
@@ -202,7 +204,7 @@ export default function ArrangementModal({
             </div>
 
             <div style={{ marginBottom: "2.5rem" }}>
-              <label style={{ display: "block", fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--gold-primary)", marginBottom: "0.8rem", fontWeight: 700 }}>
+              <label style={{ display: "block", fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--gold-deep)", marginBottom: "0.8rem", fontWeight: 700 }}>
                 Urgency
               </label>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.6rem" }}>
@@ -221,10 +223,12 @@ export default function ArrangementModal({
                       textAlign: "left",
                       fontSize: "0.82rem",
                       fontWeight: 600,
-                      background: urgency === u.id ? "#111111" : "#000000",
-                      color: urgency === u.id ? "#fff" : "var(--text-muted)",
-                      border: urgency === u.id ? "1px solid var(--gold-primary)" : "1px solid var(--border-dark-subtle)",
+                      background: urgency === u.id ? "#ffffff" : "var(--bg-obsidian)",
+                      color: urgency === u.id ? "var(--text-primary)" : "var(--text-secondary)",
+                      border: urgency === u.id ? "1px solid var(--gold-primary)" : "1px solid var(--border-gold-hairline)",
+                      boxShadow: urgency === u.id ? "0 2px 8px rgba(184, 134, 11, 0.2)" : "none",
                       cursor: "pointer",
+                      transition: "all 0.2s ease",
                     }}
                   >
                     {u.label}
@@ -260,9 +264,9 @@ export default function ArrangementModal({
                 style={{
                   width: "100%",
                   padding: "0.9rem 1rem",
-                  background: "#000000",
+                  background: "#ffffff",
                   border: "1px solid var(--border-gold-hairline)",
-                  color: "#fff",
+                  color: "var(--text-primary)",
                   fontSize: "0.9rem",
                   outline: "none",
                 }}
@@ -282,9 +286,9 @@ export default function ArrangementModal({
                 style={{
                   width: "100%",
                   padding: "0.9rem 1rem",
-                  background: "#000000",
+                  background: "#ffffff",
                   border: "1px solid var(--border-gold-hairline)",
-                  color: "#fff",
+                  color: "var(--text-primary)",
                   fontSize: "0.9rem",
                   outline: "none",
                 }}
@@ -307,10 +311,11 @@ export default function ArrangementModal({
                       fontWeight: 700,
                       letterSpacing: "0.08em",
                       textTransform: "uppercase",
-                      background: consultationMode === mode ? "var(--gold-primary)" : "#000000",
-                      color: consultationMode === mode ? "#000000" : "var(--text-muted)",
-                      border: consultationMode === mode ? "1px solid var(--gold-light)" : "1px solid var(--border-dark-subtle)",
+                      background: consultationMode === mode ? "var(--gold-primary)" : "var(--bg-obsidian)",
+                      color: consultationMode === mode ? "#ffffff" : "var(--text-secondary)",
+                      border: consultationMode === mode ? "1px solid var(--gold-primary)" : "1px solid var(--border-gold-hairline)",
                       cursor: "pointer",
+                      transition: "all 0.2s ease",
                     }}
                   >
                     {mode}
@@ -331,9 +336,9 @@ export default function ArrangementModal({
                 style={{
                   width: "100%",
                   padding: "0.9rem 1rem",
-                  background: "#000000",
+                  background: "#ffffff",
                   border: "1px solid var(--border-gold-hairline)",
-                  color: "#fff",
+                  color: "var(--text-primary)",
                   fontSize: "0.9rem",
                   outline: "none",
                   resize: "vertical",
@@ -376,20 +381,20 @@ export default function ArrangementModal({
 
           return (
             <div style={{ textAlign: "center", padding: "1.5rem 0" }}>
-              <div style={{ fontSize: "2.5rem", color: "var(--gold-primary)", marginBottom: "1rem" }}>
+              <div style={{ fontSize: "2.5rem", color: "var(--gold-deep)", marginBottom: "1rem" }}>
                 ✓
               </div>
 
-              <h3 style={{ fontSize: "1.8rem", color: "#ffffff", marginBottom: "0.5rem" }}>
+              <h3 style={{ fontSize: "1.8rem", color: "var(--text-primary)", marginBottom: "0.5rem" }}>
                 Your Arrangement Has Been Prepared
               </h3>
               <div
                 style={{
                   display: "inline-block",
                   padding: "0.4rem 1.2rem",
-                  background: "#111111",
+                  background: "var(--bg-obsidian)",
                   border: "1px solid var(--gold-primary)",
-                  color: "var(--gold-light)",
+                  color: "var(--gold-deep)",
                   fontWeight: 700,
                   fontSize: "1.1rem",
                   letterSpacing: "0.1em",
@@ -435,7 +440,7 @@ export default function ArrangementModal({
                 <a
                   href="tel:0835525448"
                   className="btn-outline"
-                  style={{ justifyContent: "center", borderColor: "rgba(255,255,255,0.15)", padding: "0.85rem" }}
+                  style={{ justifyContent: "center", padding: "0.85rem" }}
                 >
                   <Phone size={15} />
                   <span>Call Director Berry: 083 552 5448</span>

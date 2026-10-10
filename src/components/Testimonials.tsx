@@ -34,19 +34,19 @@ export default function Testimonials() {
       id="testimonials"
       style={{
         padding: "7rem 0",
-        background: "#000000",
+        background: "var(--bg-pure-black)",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Background Architectural Grid Lines & Dark Scrim */}
+      {/* Background Architectural Grid Lines & Scrim */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
           backgroundImage:
-            "linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(184, 134, 11, 0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(184, 134, 11, 0.07) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
           maskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
           WebkitMaskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
@@ -79,7 +79,7 @@ export default function Testimonials() {
             "Cathedral Stained Glass",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.96) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(251, 249, 245, 0.92) 0%, rgba(251, 249, 245, 0.74) 40%, rgba(251, 249, 245, 0.98) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -109,23 +109,24 @@ export default function Testimonials() {
               key={idx}
               className="card-3d-interactive"
               style={{
-                background: "#080808",
+                background: "#ffffff",
                 border: "1px solid var(--border-gold-hairline)",
                 padding: "2.75rem 2.25rem",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
                 position: "relative",
+                boxShadow: "0 6px 24px rgba(0, 0, 0, 0.04)",
               }}
             >
               <div>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
                   <div style={{ display: "flex", gap: "0.25rem" }}>
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={14} fill="#d4af37" color="#d4af37" />
+                      <Star key={i} size={14} fill="var(--gold-primary)" color="var(--gold-primary)" />
                     ))}
                   </div>
-                  <Quote size={24} color="var(--gold-primary)" style={{ opacity: 0.4 }} />
+                  <Quote size={24} color="var(--gold-primary)" style={{ opacity: 0.35 }} />
                 </div>
 
                 <p
@@ -141,13 +142,13 @@ export default function Testimonials() {
                 </p>
               </div>
 
-              <div style={{ borderTop: "1px solid var(--border-dark-subtle)", paddingTop: "1.25rem" }}>
-                <h4 style={{ fontSize: "1.05rem", color: "#ffffff", marginBottom: "0.25rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              <div style={{ borderTop: "1px solid var(--border-gold-hairline)", paddingTop: "1.25rem" }}>
+                <h4 style={{ fontSize: "1.05rem", color: "var(--text-primary)", marginBottom: "0.25rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>
                   {r.family}
                 </h4>
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.78rem", color: "var(--text-muted)" }}>
                   <span>{r.location}</span>
-                  <span style={{ color: "var(--gold-primary)", fontWeight: 700 }}>{r.service}</span>
+                  <span style={{ color: "var(--gold-deep)", fontWeight: 700 }}>{r.service}</span>
                 </div>
               </div>
             </div>

@@ -22,7 +22,7 @@ export default function AboutFounder() {
   };
 
   return (
-    <section id="about" style={{ padding: "7rem 0", background: "#050505", position: "relative", overflow: "hidden" }}>
+    <section id="about" style={{ padding: "7rem 0", background: "var(--bg-pure-black)", position: "relative", overflow: "hidden" }}>
       {/* Background Monumental Typography */}
       <div
         style={{
@@ -32,7 +32,7 @@ export default function AboutFounder() {
           pointerEvents: "none",
           fontFamily: "var(--font-serif)",
           fontSize: "clamp(8rem, 18vw, 20rem)",
-          color: "rgba(212, 175, 55, 0.02)",
+          color: "rgba(184, 134, 11, 0.04)",
           fontWeight: 700,
           userSelect: "none",
           whiteSpace: "nowrap",
@@ -80,7 +80,7 @@ export default function AboutFounder() {
                 position: "relative",
                 maxWidth: "420px",
                 margin: "0 auto",
-                background: "#0a0a0a",
+                background: "#ffffff",
                 border: "1px solid var(--border-gold-hairline)",
                 padding: "0.85rem",
                 boxShadow: "var(--shadow-3d)",
@@ -121,7 +121,7 @@ export default function AboutFounder() {
                   width: "100%",
                   aspectRatio: "3/4",
                   overflow: "hidden",
-                  background: "#000000",
+                  background: "#f3ede2",
                 }}
               >
                 <SectionImageShuffler
@@ -138,7 +138,7 @@ export default function AboutFounder() {
                     "Serene Memorial Garden",
                   ]}
                   intervalMs={4500}
-                  overlayGradient="linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.92) 100%)"
+                  overlayGradient="linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.85) 100%)"
                   caption="Heritage"
                   enableScrollFade={true}
                 />
@@ -157,7 +157,7 @@ export default function AboutFounder() {
                     <h4 style={{ fontSize: "1.1rem", color: "#ffffff", letterSpacing: "0.06em" }}>
                       Berry Mofulatsi
                     </h4>
-                    <span style={{ fontSize: "0.72rem", color: "var(--gold-light)", textTransform: "uppercase", letterSpacing: "0.15em" }}>
+                    <span style={{ fontSize: "0.72rem", color: "#f7e5b5", textTransform: "uppercase", letterSpacing: "0.15em" }}>
                       Founder & Managing Director
                     </span>
                   </div>
@@ -174,10 +174,10 @@ export default function AboutFounder() {
             className="founder-content-col"
           >
             <div style={{ maxWidth: "620px" }}>
-              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-primary)", marginBottom: "0.5rem" }}>
+              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-primary)", marginBottom: "0.5rem", fontWeight: 700 }}>
                 Founder & Managing Director
               </div>
-              <h3 style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", color: "#ffffff", marginBottom: "1.5rem" }}>
+              <h3 style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", color: "var(--text-primary)", marginBottom: "1.5rem" }}>
                 Berry Mofulatsi
               </h3>
 
@@ -198,9 +198,10 @@ export default function AboutFounder() {
               {/* Editorial Quote Box with Hairline Gold Accents */}
               <div
                 style={{
-                  background: "#090909",
+                  background: "#F5F1E8",
                   border: "1px solid var(--border-gold-hairline)",
                   borderLeft: "3px solid var(--gold-primary)",
+                  boxShadow: "0 8px 24px rgba(0, 0, 0, 0.04)",
                   padding: "1.75rem 2rem",
                   marginBottom: "2.5rem",
                   position: "relative",
@@ -211,7 +212,7 @@ export default function AboutFounder() {
                   style={{
                     fontFamily: "var(--font-serif)",
                     fontSize: "1.25rem",
-                    color: "#ffffff",
+                    color: "var(--text-primary)",
                     fontStyle: "italic",
                     lineHeight: 1.6,
                     letterSpacing: "0.02em",
@@ -219,7 +220,7 @@ export default function AboutFounder() {
                 >
                   &ldquo;Every farewell deserves dignity, compassion and respect.&rdquo;
                 </p>
-                <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--gold-light)", marginTop: "0.6rem" }}>
+                <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--gold-deep)", fontWeight: 700, marginTop: "0.6rem" }}>
                   — Berry Mofulatsi, Director
                 </div>
               </div>
@@ -234,8 +235,9 @@ export default function AboutFounder() {
                       fontWeight: 700,
                       letterSpacing: "0.2em",
                       border: "1px solid var(--border-gold-hairline)",
-                      background: "#080808",
-                      color: "var(--gold-light)",
+                      background: "#ffffff",
+                      color: "var(--gold-deep)",
+                      boxShadow: "0 2px 6px rgba(0,0,0,0.03)",
                       padding: "0.45rem 1rem",
                     }}
                   >
@@ -258,8 +260,9 @@ export default function AboutFounder() {
           {/* Vision */}
           <div
             style={{
-              background: "#080808",
+              background: "#ffffff",
               border: "1px solid var(--border-gold-hairline)",
+              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.04)",
               padding: "2.75rem",
             }}
           >
@@ -267,7 +270,7 @@ export default function AboutFounder() {
               <span style={{ fontFamily: "var(--font-serif)", fontSize: "1.1rem", color: "var(--gold-primary)", fontWeight: 700 }}>
                 [ I ]
               </span>
-              <h3 style={{ fontSize: "1.5rem", color: "#ffffff", letterSpacing: "0.06em" }}>Our Vision</h3>
+              <h3 style={{ fontSize: "1.5rem", color: "var(--text-primary)", letterSpacing: "0.06em" }}>Our Vision</h3>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
               {[
@@ -288,8 +291,9 @@ export default function AboutFounder() {
           {/* Mission */}
           <div
             style={{
-              background: "#080808",
+              background: "#ffffff",
               border: "1px solid var(--border-gold-hairline)",
+              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.04)",
               padding: "2.75rem",
             }}
           >
@@ -297,7 +301,7 @@ export default function AboutFounder() {
               <span style={{ fontFamily: "var(--font-serif)", fontSize: "1.1rem", color: "var(--gold-primary)", fontWeight: 700 }}>
                 [ II ]
               </span>
-              <h3 style={{ fontSize: "1.5rem", color: "#ffffff", letterSpacing: "0.06em" }}>Our Mission</h3>
+              <h3 style={{ fontSize: "1.5rem", color: "var(--text-primary)", letterSpacing: "0.06em" }}>Our Mission</h3>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
               {[

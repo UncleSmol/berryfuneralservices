@@ -57,19 +57,19 @@ export default function ImmediateGuidance() {
       id="guidance"
       style={{
         padding: "7rem 0",
-        background: "#000000",
+        background: "var(--bg-obsidian)",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Background Architectural Grid Lines & Dark Scrim */}
+      {/* Background Architectural Grid Lines */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
           backgroundImage:
-            "linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(184, 134, 11, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(184, 134, 11, 0.04) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
           maskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
           WebkitMaskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
@@ -77,7 +77,7 @@ export default function ImmediateGuidance() {
         }}
       />
 
-      {/* Atmospheric Shuffling Background with Scroll Fade (Hero-style dynamic photography) */}
+      {/* Atmospheric Shuffling Background with Scroll Fade */}
       <div
         style={{
           position: "absolute",
@@ -100,7 +100,7 @@ export default function ImmediateGuidance() {
             "Sanctuary Peace",
           ]}
           intervalMs={5000}
-          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.72) 40%, rgba(0,0,0,0.96) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(245, 241, 232, 0.90) 0%, rgba(245, 241, 232, 0.72) 40%, rgba(245, 241, 232, 0.96) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -137,16 +137,17 @@ export default function ImmediateGuidance() {
                 style={{
                   padding: "1.75rem",
                   cursor: "pointer",
-                  background: isSelected ? "#121212" : "#000000",
+                  background: isSelected ? "#ffffff" : "#fbf9f6",
                   border: isSelected ? "1px solid var(--gold-primary)" : "1px solid var(--border-dark-subtle)",
                   borderTop: isSelected ? "3px solid var(--gold-primary)" : "1px solid var(--border-dark-subtle)",
+                  boxShadow: isSelected ? "0 8px 24px rgba(184, 134, 11, 0.12)" : "0 2px 8px rgba(0,0,0,0.03)",
                   transition: "all 0.3s ease",
                 }}
               >
                 <div style={{ marginBottom: "1rem" }}>
-                  <Icon size={22} style={{ color: isSelected ? "var(--gold-light)" : "var(--gold-primary)" }} />
+                  <Icon size={22} style={{ color: isSelected ? "var(--gold-deep)" : "var(--gold-primary)" }} />
                 </div>
-                <h4 style={{ fontSize: "1.05rem", color: isSelected ? "#ffffff" : "var(--text-secondary)", marginBottom: "0.25rem" }}>
+                <h4 style={{ fontSize: "1.05rem", color: isSelected ? "var(--text-primary)" : "var(--text-secondary)", marginBottom: "0.25rem" }}>
                   {item.title}
                 </h4>
                 <div style={{ fontSize: "0.78rem", color: "var(--text-muted)" }}>
@@ -161,8 +162,9 @@ export default function ImmediateGuidance() {
         <div
           className="gilded-bracket-box"
           style={{
-            background: "#080808",
+            background: "#ffffff",
             border: "1px solid var(--border-gold-hairline)",
+            boxShadow: "0 15px 35px rgba(0, 0, 0, 0.06)",
             padding: "3.5rem",
           }}
         >
@@ -176,7 +178,7 @@ export default function ImmediateGuidance() {
           >
             <div style={{ gridColumn: "span 12" }} className="guidance-left-col">
 
-              <h3 style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)", color: "#ffffff", marginBottom: "1.25rem" }}>
+              <h3 style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)", color: "var(--text-primary)", marginBottom: "1.25rem" }}>
                 {steps[activeStep].title}
               </h3>
 
@@ -186,7 +188,8 @@ export default function ImmediateGuidance() {
 
               <div
                 style={{
-                  background: "#000000",
+                  background: "#fbf9f5",
+                  border: "1px solid var(--border-gold-hairline)",
                   borderLeft: "3px solid var(--gold-primary)",
                   padding: "1.25rem 1.5rem",
                 }}

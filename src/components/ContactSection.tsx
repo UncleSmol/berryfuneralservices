@@ -34,9 +34,9 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" style={{ padding: "7rem 0", background: "#000000", position: "relative", overflow: "hidden" }}>
+    <section id="contact" style={{ padding: "7rem 0", background: "var(--bg-pure-black)", position: "relative", overflow: "hidden" }}>
       {/* Background Sanctuary Atmosphere Shuffler with Scroll Fade */}
-      <div style={{ position: "absolute", inset: 0, opacity: 0.22, pointerEvents: "none" }}>
+      <div style={{ position: "absolute", inset: 0, opacity: 0.18, pointerEvents: "none" }}>
         <SectionImageShuffler
           images={[
             "/images/african-funeral-directors.jpg",
@@ -53,7 +53,7 @@ export default function ContactSection() {
             "Solemn Memorial Chapel",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.80) 50%, rgba(0,0,0,0.96) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(251, 249, 245, 0.94) 0%, rgba(251, 249, 245, 0.82) 50%, rgba(251, 249, 245, 0.98) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -91,19 +91,20 @@ export default function ContactSection() {
               className="gilded-bracket-box"
               style={{
                 padding: "2.5rem 2rem",
-                background: "#080808",
+                background: "#ffffff",
                 border: "1px solid var(--border-gold-strong)",
                 marginBottom: "2rem",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.75rem" }}>
                 <span className="pulse-indicator" />
-                <div style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-primary)", fontWeight: 700 }}>
+                <div style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-deep)", fontWeight: 700 }}>
                   24/7 Immediate Dispatch
                 </div>
               </div>
 
-              <h3 style={{ fontSize: "1.6rem", color: "#ffffff", marginBottom: "1rem" }}>
+              <h3 style={{ fontSize: "1.6rem", color: "var(--text-primary)", marginBottom: "1rem" }}>
                 Immediate Removal Hotline
               </h3>
               <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", marginBottom: "1.75rem", lineHeight: 1.6 }}>
@@ -146,7 +147,7 @@ export default function ContactSection() {
                     justifyContent: "center",
                     marginTop: "0.5rem",
                     borderColor: "rgba(16, 185, 129, 0.4)",
-                    color: "#a7f3d0",
+                    color: "#059669",
                   }}
                 >
                   <MessageSquare size={16} color="#10b981" />
@@ -158,12 +159,13 @@ export default function ContactSection() {
             {/* Official Headquarters Card */}
             <div
               style={{
-                background: "#080808",
+                background: "#ffffff",
                 border: "1px solid var(--border-gold-hairline)",
                 padding: "2rem",
+                boxShadow: "0 6px 20px rgba(0,0,0,0.03)",
               }}
             >
-              <div style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-primary)", fontWeight: 700, marginBottom: "1.25rem" }}>
+              <div style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-deep)", fontWeight: 700, marginBottom: "1.25rem" }}>
                 Physical Location & Headquarters
               </div>
 
@@ -171,7 +173,7 @@ export default function ContactSection() {
                 <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
                   <MapPin size={18} color="var(--gold-primary)" style={{ marginTop: "3px", flexShrink: 0 }} />
                   <div>
-                    <strong style={{ color: "#fff", display: "block", fontSize: "0.92rem" }}>
+                    <strong style={{ color: "var(--text-primary)", display: "block", fontSize: "0.92rem" }}>
                       Ebony Park Head Office
                     </strong>
                     <span style={{ color: "var(--text-secondary)", fontSize: "0.88rem", lineHeight: 1.5 }}>
@@ -183,7 +185,7 @@ export default function ContactSection() {
                 <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
                   <Mail size={16} color="var(--gold-primary)" style={{ flexShrink: 0 }} />
                   <div>
-                    <strong style={{ color: "#fff", display: "block", fontSize: "0.82rem" }}>Official Email</strong>
+                    <strong style={{ color: "var(--text-primary)", display: "block", fontSize: "0.82rem" }}>Official Email</strong>
                     <a href="mailto:berrymof@gmail.com" style={{ color: "var(--text-secondary)", fontSize: "0.88rem" }}>
                       berrymof@gmail.com
                     </a>
@@ -193,7 +195,7 @@ export default function ContactSection() {
                 <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
                   <Globe size={16} color="var(--gold-primary)" style={{ flexShrink: 0 }} />
                   <div>
-                    <strong style={{ color: "#fff", display: "block", fontSize: "0.82rem" }}>Official Web Portals</strong>
+                    <strong style={{ color: "var(--text-primary)", display: "block", fontSize: "0.82rem" }}>Official Web Portals</strong>
                     <span style={{ color: "var(--text-secondary)", fontSize: "0.88rem" }}>
                       www.berryfuneralservice.co.za
                     </span>
@@ -203,13 +205,13 @@ export default function ContactSection() {
                 <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
                   <Clock size={16} color="var(--gold-primary)" style={{ marginTop: "3px", flexShrink: 0 }} />
                   <div style={{ width: "100%" }}>
-                    <strong style={{ color: "#fff", display: "block", fontSize: "0.82rem", marginBottom: "0.5rem" }}>
+                    <strong style={{ color: "var(--text-primary)", display: "block", fontSize: "0.82rem", marginBottom: "0.5rem" }}>
                       Office Operating Schedule
                     </strong>
                     <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem", fontSize: "0.82rem" }}>
                       <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <span style={{ color: "var(--text-secondary)" }}>Monday</span>
-                        <span style={{ color: "#ffffff", fontWeight: 600 }}>9:00 AM – 6:00 PM</span>
+                        <span style={{ color: "var(--text-primary)", fontWeight: 600 }}>9:00 AM – 6:00 PM</span>
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <span style={{ color: "var(--text-secondary)" }}>Tuesday</span>
@@ -217,15 +219,15 @@ export default function ContactSection() {
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <span style={{ color: "var(--text-secondary)" }}>Wednesday</span>
-                        <span style={{ color: "#ffffff", fontWeight: 600 }}>9:00 AM – 6:00 PM</span>
+                        <span style={{ color: "var(--text-primary)", fontWeight: 600 }}>9:00 AM – 6:00 PM</span>
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <span style={{ color: "var(--text-secondary)" }}>Thursday</span>
-                        <span style={{ color: "#ffffff", fontWeight: 600 }}>9:00 AM – 6:00 PM</span>
+                        <span style={{ color: "var(--text-primary)", fontWeight: 600 }}>9:00 AM – 6:00 PM</span>
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <span style={{ color: "var(--text-secondary)" }}>Friday</span>
-                        <span style={{ color: "#ffffff", fontWeight: 600 }}>9:00 AM – 6:00 PM</span>
+                        <span style={{ color: "var(--text-primary)", fontWeight: 600 }}>9:00 AM – 6:00 PM</span>
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <span style={{ color: "var(--text-secondary)" }}>Saturday</span>
@@ -236,7 +238,7 @@ export default function ContactSection() {
                         <span style={{ color: "#ef4444", fontWeight: 600 }}>Closed</span>
                       </div>
                     </div>
-                    <div style={{ marginTop: "0.6rem", fontSize: "0.78rem", color: "var(--gold-primary)", lineHeight: 1.4 }}>
+                    <div style={{ marginTop: "0.6rem", fontSize: "0.78rem", color: "var(--gold-deep)", lineHeight: 1.4, fontWeight: 600 }}>
                       • 24/7 Bereavement Dispatch & Body Removal active round-the-clock everyday.
                     </div>
                   </div>
@@ -249,17 +251,17 @@ export default function ContactSection() {
           <div
             style={{
               gridColumn: "span 12",
-              background: "#080808",
+              background: "#ffffff",
               border: "1px solid var(--border-gold-hairline)",
               padding: "3rem 2.5rem",
-              boxShadow: "var(--shadow-3d)",
+              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.05)",
             }}
             className="contact-right-col gilded-bracket-box"
           >
-            <div style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-primary)", fontWeight: 700, marginBottom: "0.4rem" }}>
+            <div style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-deep)", fontWeight: 700, marginBottom: "0.4rem" }}>
               [ DIRECT CONSULTATION ]
             </div>
-            <h3 style={{ fontSize: "1.8rem", color: "#ffffff", marginBottom: "0.5rem" }}>
+            <h3 style={{ fontSize: "1.8rem", color: "var(--text-primary)", marginBottom: "0.5rem" }}>
               Request Director Consultation
             </h3>
             <p style={{ fontSize: "0.9rem", color: "var(--text-muted)", marginBottom: "2rem" }}>
@@ -271,14 +273,14 @@ export default function ContactSection() {
                 style={{
                   padding: "3rem 2rem",
                   textAlign: "center",
-                  background: "#0d0d0d",
+                  background: "var(--bg-obsidian)",
                   border: "1px solid var(--gold-primary)",
                 }}
               >
-                <div style={{ fontSize: "2rem", color: "var(--gold-primary)", marginBottom: "1rem" }}>
+                <div style={{ fontSize: "2rem", color: "var(--gold-deep)", marginBottom: "1rem" }}>
                   ✓
                 </div>
-                <h4 style={{ fontSize: "1.4rem", color: "#ffffff", marginBottom: "0.75rem" }}>
+                <h4 style={{ fontSize: "1.4rem", color: "var(--text-primary)", marginBottom: "0.75rem" }}>
                   Inquiry Template Prepared
                 </h4>
                 <p style={{ fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: "480px", margin: "0 auto 2rem auto" }}>
@@ -316,7 +318,7 @@ export default function ContactSection() {
                   <a
                     href="tel:0835525448"
                     className="btn-outline"
-                    style={{ justifyContent: "center", borderColor: "rgba(255,255,255,0.15)" }}
+                    style={{ justifyContent: "center" }}
                   >
                     <Phone size={14} />
                     <span>Call 083 552 5448</span>
@@ -326,7 +328,7 @@ export default function ContactSection() {
                 <button
                   onClick={() => setFormSubmitted(false)}
                   className="btn-outline"
-                  style={{ fontSize: "0.82rem", borderColor: "rgba(255,255,255,0.1)" }}
+                  style={{ fontSize: "0.82rem" }}
                 >
                   Write Another Message
                 </button>
@@ -346,9 +348,9 @@ export default function ContactSection() {
                     style={{
                       width: "100%",
                       padding: "0.9rem 1rem",
-                      background: "#000000",
+                      background: "#ffffff",
                       border: "1px solid var(--border-gold-hairline)",
-                      color: "#fff",
+                      color: "var(--text-primary)",
                       fontSize: "0.9rem",
                       outline: "none",
                     }}
@@ -369,9 +371,9 @@ export default function ContactSection() {
                       style={{
                         width: "100%",
                         padding: "0.9rem 1rem",
-                        background: "#000000",
+                        background: "#ffffff",
                         border: "1px solid var(--border-gold-hairline)",
-                        color: "#fff",
+                        color: "var(--text-primary)",
                         fontSize: "0.9rem",
                         outline: "none",
                       }}
@@ -389,9 +391,9 @@ export default function ContactSection() {
                       style={{
                         width: "100%",
                         padding: "0.9rem 1rem",
-                        background: "#000000",
+                        background: "#ffffff",
                         border: "1px solid var(--border-gold-hairline)",
-                        color: "#fff",
+                        color: "var(--text-primary)",
                         fontSize: "0.9rem",
                         outline: "none",
                       }}
@@ -410,9 +412,9 @@ export default function ContactSection() {
                       style={{
                         width: "100%",
                         padding: "0.9rem 1rem",
-                        background: "#000000",
+                        background: "#ffffff",
                         border: "1px solid var(--border-gold-hairline)",
-                        color: "#fff",
+                        color: "var(--text-primary)",
                         fontSize: "0.88rem",
                         outline: "none",
                       }}
@@ -438,9 +440,9 @@ export default function ContactSection() {
                       style={{
                         width: "100%",
                         padding: "0.9rem 1rem",
-                        background: "#000000",
+                        background: "#ffffff",
                         border: "1px solid var(--border-gold-hairline)",
-                        color: "#fff",
+                        color: "var(--text-primary)",
                         fontSize: "0.88rem",
                         outline: "none",
                       }}
@@ -468,9 +470,9 @@ export default function ContactSection() {
                     style={{
                       width: "100%",
                       padding: "0.9rem 1rem",
-                      background: "#000000",
+                      background: "#ffffff",
                       border: "1px solid var(--border-gold-hairline)",
-                      color: "#fff",
+                      color: "var(--text-primary)",
                       fontSize: "0.9rem",
                       outline: "none",
                       resize: "vertical",

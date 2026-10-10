@@ -51,21 +51,21 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
       style={{
         position: "relative",
         minHeight: "92vh",
-        background: "#000000",
+        background: "var(--bg-pure-black)",
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
       }}
     >
-      {/* Background Architectural Grid Lines & Dark Scrim */}
+      {/* Background Architectural Grid Lines */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
           backgroundImage:
-            "linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(184, 134, 11, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(184, 134, 11, 0.04) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
           maskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
           WebkitMaskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
@@ -100,7 +100,7 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
             "Cathedral Stained Glass Reverence",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.98) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(251, 249, 245, 0.90) 0%, rgba(251, 249, 245, 0.72) 40%, rgba(251, 249, 245, 0.98) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -165,9 +165,9 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
                 lineHeight: 1.05,
                 fontWeight: 600,
                 letterSpacing: "0.02em",
-                color: "#ffffff",
+                color: "var(--text-primary)",
                 marginBottom: "1.75rem",
-                textShadow: "0 4px 30px rgba(0, 0, 0, 0.9)",
+                textShadow: "0 2px 20px rgba(255, 255, 255, 0.8)",
               }}
             >
               Dignified Last Goodbye to{" "}
@@ -185,10 +185,12 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
             {/* Editorial Paragraph with high legibility contrast */}
             <div
               style={{
-                background: "rgba(0, 0, 0, 0.65)",
-                backdropFilter: "blur(8px)",
-                WebkitBackdropFilter: "blur(8px)",
-                borderLeft: "2px solid var(--gold-primary)",
+                background: "rgba(255, 255, 255, 0.92)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+                border: "1px solid var(--border-gold-hairline)",
+                borderLeft: "3px solid var(--gold-primary)",
+                boxShadow: "0 8px 30px rgba(0, 0, 0, 0.05)",
                 padding: "1.25rem 1.75rem",
                 maxWidth: "640px",
                 marginBottom: "2.5rem",
@@ -251,7 +253,7 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
               <button
                 onClick={() => onScrollToSection("contact")}
                 className="btn-outline"
-                style={{ borderColor: "rgba(255,255,255,0.15)" }}
+                style={{ borderColor: "var(--border-gold-hairline)" }}
               >
                 <span>Contact Details</span>
                 <ChevronRight size={16} />
@@ -274,7 +276,7 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
               className="card-3d-interactive"
               style={{
                 position: "relative",
-                background: "#080808",
+                background: "#ffffff",
                 border: "1px solid var(--border-gold-hairline)",
                 padding: "1rem",
                 boxShadow: "var(--shadow-3d)",

@@ -69,9 +69,9 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
   };
 
   return (
-    <section id="calculator" style={{ padding: "7rem 0", background: "#050505", position: "relative", overflow: "hidden" }}>
+    <section id="calculator" style={{ padding: "7rem 0", background: "var(--bg-obsidian)", position: "relative", overflow: "hidden" }}>
       {/* Background Atmosphere Shuffler with Scroll Fade */}
-      <div style={{ position: "absolute", inset: 0, opacity: 0.22, pointerEvents: "none" }}>
+      <div style={{ position: "absolute", inset: 0, opacity: 0.16, pointerEvents: "none" }}>
         <SectionImageShuffler
           images={[
             "/images/casket1.jpg",
@@ -86,7 +86,7 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
             "Memorial Vigil Candles",
           ]}
           intervalMs={5000}
-          overlayGradient="linear-gradient(180deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.85) 50%, rgba(5,5,5,0.98) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(245, 241, 232, 0.95) 0%, rgba(245, 241, 232, 0.80) 50%, rgba(245, 241, 232, 0.98) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -116,15 +116,16 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
           <div
             style={{
               gridColumn: "span 12",
-              background: "#080808",
+              background: "#ffffff",
               border: "1px solid var(--border-gold-hairline)",
               padding: "2.5rem",
+              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.05)",
             }}
             className="calc-controls-col"
           >
             {/* Step 1: Service Type */}
             <div style={{ marginBottom: "2.5rem" }}>
-              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-primary)", fontWeight: 700, marginBottom: "0.85rem" }}>
+              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-deep)", fontWeight: 700, marginBottom: "0.85rem" }}>
                 Select Service Type
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.6rem" }}>
@@ -143,11 +144,12 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
                       fontWeight: 700,
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
-                      background: serviceType === s.id ? "var(--gold-primary)" : "#000000",
-                      color: serviceType === s.id ? "#000000" : "var(--text-secondary)",
-                      border: serviceType === s.id ? "1px solid var(--gold-light)" : "1px solid var(--border-dark-subtle)",
+                      background: serviceType === s.id ? "var(--gold-primary)" : "var(--bg-obsidian)",
+                      color: serviceType === s.id ? "#ffffff" : "var(--text-primary)",
+                      border: serviceType === s.id ? "1px solid var(--gold-primary)" : "1px solid var(--border-gold-hairline)",
                       cursor: "pointer",
                       textAlign: "left",
+                      transition: "all 0.2s ease",
                     }}
                   >
                     {s.label}
@@ -158,7 +160,7 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
 
             {/* Step 2: Casket Tier */}
             <div style={{ marginBottom: "2.5rem" }}>
-              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-primary)", fontWeight: 700, marginBottom: "0.85rem" }}>
+              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-deep)", fontWeight: 700, marginBottom: "0.85rem" }}>
                 Coffin & Casket Selection
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
@@ -172,17 +174,18 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "center",
-                      background: casketTier === key ? "#111111" : "#000000",
-                      border: casketTier === key ? "1px solid var(--gold-primary)" : "1px solid var(--border-dark-subtle)",
+                      background: casketTier === key ? "var(--bg-obsidian)" : "#ffffff",
+                      border: casketTier === key ? "1px solid var(--gold-primary)" : "1px solid var(--border-gold-hairline)",
+                      boxShadow: casketTier === key ? "0 2px 10px rgba(184, 134, 11, 0.15)" : "none",
                     }}
                   >
                     <div>
-                      <div style={{ fontWeight: 700, color: casketTier === key ? "#fff" : "var(--text-secondary)", fontSize: "0.92rem", textTransform: "uppercase" }}>
+                      <div style={{ fontWeight: 700, color: "var(--text-primary)", fontSize: "0.92rem", textTransform: "uppercase" }}>
                         {item.label}
                       </div>
                       <div style={{ fontSize: "0.78rem", color: "var(--text-muted)", marginTop: "2px" }}>{item.desc}</div>
                     </div>
-                    <div style={{ fontWeight: 700, color: "var(--gold-light)", fontFamily: "var(--font-serif)", fontSize: "1.1rem" }}>
+                    <div style={{ fontWeight: 700, color: "var(--gold-deep)", fontFamily: "var(--font-serif)", fontSize: "1.1rem" }}>
                       +R{item.price.toLocaleString()}
                     </div>
                   </div>
@@ -192,7 +195,7 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
 
             {/* Step 3: Transportation */}
             <div style={{ marginBottom: "2.5rem" }}>
-              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-primary)", fontWeight: 700, marginBottom: "0.85rem" }}>
+              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-deep)", fontWeight: 700, marginBottom: "0.85rem" }}>
                 Vehicles & Nationwide Distance
               </div>
               <select
@@ -201,16 +204,16 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
                 style={{
                   width: "100%",
                   padding: "0.9rem 1rem",
-                  background: "#000000",
+                  background: "#ffffff",
                   border: "1px solid var(--border-gold-hairline)",
-                  color: "#fff",
+                  color: "var(--text-primary)",
                   fontSize: "0.88rem",
                   marginBottom: "1.25rem",
                   outline: "none",
                 }}
               >
                 {Object.entries(fleetPrices).map(([key, item]) => (
-                  <option key={key} value={key} style={{ background: "#000000" }}>
+                  <option key={key} value={key}>
                     {item.label} {item.price > 0 ? `(+R${item.price.toLocaleString()})` : ""}
                   </option>
                 ))}
@@ -219,7 +222,7 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
               <div style={{ marginTop: "0.8rem" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.82rem", color: "var(--text-muted)", marginBottom: "0.4rem" }}>
                   <span>Nationwide Distance Outside Gauteng</span>
-                  <span style={{ color: "var(--gold-primary)", fontWeight: 700 }}>{distanceKm} km (+R{distanceCost.toLocaleString()})</span>
+                  <span style={{ color: "var(--gold-deep)", fontWeight: 700 }}>{distanceKm} km (+R{distanceCost.toLocaleString()})</span>
                 </div>
                 <input
                   type="range"
@@ -235,7 +238,7 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
 
             {/* Step 4: Ceremony Extras */}
             <div>
-              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-primary)", fontWeight: 700, marginBottom: "0.85rem" }}>
+              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-deep)", fontWeight: 700, marginBottom: "0.85rem" }}>
                 Tents, Chairs & Ceremony Logistics
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -249,19 +252,19 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "space-between",
-                      background: extras[item.key] ? "#111111" : "#000000",
-                      border: extras[item.key] ? "1px solid var(--border-gold-strong)" : "1px solid var(--border-dark-subtle)",
+                      background: extras[item.key] ? "var(--bg-obsidian)" : "#ffffff",
+                      border: extras[item.key] ? "1px solid var(--gold-primary)" : "1px solid var(--border-gold-hairline)",
                     }}
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                      <span style={{ color: extras[item.key] ? "var(--gold-primary)" : "var(--text-muted)", fontSize: "0.9rem" }}>
-                        {extras[item.key] ? "[X]" : "[ ]"}
+                      <span style={{ color: extras[item.key] ? "var(--gold-deep)" : "var(--text-muted)", fontSize: "0.9rem", fontWeight: 700 }}>
+                        {extras[item.key] ? "[✓]" : "[  ]"}
                       </span>
-                      <span style={{ fontSize: "0.85rem", color: extras[item.key] ? "#ffffff" : "var(--text-muted)" }}>
+                      <span style={{ fontSize: "0.85rem", color: "var(--text-primary)" }}>
                         {item.label}
                       </span>
                     </div>
-                    <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--gold-light)" }}>
+                    <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--gold-deep)" }}>
                       +R{item.price.toLocaleString()}
                     </span>
                   </div>
@@ -274,16 +277,16 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
           <div
             style={{
               gridColumn: "span 12",
-              background: "#080808",
-              border: "1px solid var(--border-gold-strong)",
+              background: "#ffffff",
+              border: "1px solid var(--gold-primary)",
               padding: "2.5rem",
               position: "sticky",
               top: "100px",
-              boxShadow: "var(--shadow-3d)",
+              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.08)",
             }}
             className="calc-summary-col gilded-bracket-box"
           >
-            <h3 style={{ fontSize: "1.6rem", color: "#ffffff", marginBottom: "0.4rem" }}>
+            <h3 style={{ fontSize: "1.6rem", color: "var(--text-primary)", marginBottom: "0.4rem" }}>
               Official Quotation
             </h3>
             <p style={{ fontSize: "0.82rem", color: "var(--text-muted)", marginBottom: "1.75rem" }}>
@@ -303,22 +306,22 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
             >
               <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.88rem" }}>
                 <span style={{ color: "var(--text-secondary)" }}>Base Service ({serviceType.toUpperCase()})</span>
-                <span style={{ fontWeight: 700, color: "#fff" }}>R{basePrice.toLocaleString()}</span>
+                <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>R{basePrice.toLocaleString()}</span>
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.88rem" }}>
                 <span style={{ color: "var(--text-secondary)" }}>{casketPrices[casketTier]?.label}</span>
-                <span style={{ fontWeight: 700, color: "#fff" }}>R{casketPrice.toLocaleString()}</span>
+                <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>R{casketPrice.toLocaleString()}</span>
               </div>
               {fleetPrice > 0 && (
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.88rem" }}>
                   <span style={{ color: "var(--text-secondary)" }}>Additional Cars</span>
-                  <span style={{ fontWeight: 700, color: "#fff" }}>R{fleetPrice.toLocaleString()}</span>
+                  <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>R{fleetPrice.toLocaleString()}</span>
                 </div>
               )}
               {distanceCost > 0 && (
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.88rem" }}>
                   <span style={{ color: "var(--text-secondary)" }}>Nationwide Mileage ({distanceKm} km)</span>
-                  <span style={{ fontWeight: 700, color: "#fff" }}>R{distanceCost.toLocaleString()}</span>
+                  <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>R{distanceCost.toLocaleString()}</span>
                 </div>
               )}
               {extrasList
@@ -326,7 +329,7 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
                 .map((item) => (
                   <div key={item.key} style={{ display: "flex", justifyContent: "space-between", fontSize: "0.88rem" }}>
                     <span style={{ color: "var(--text-secondary)" }}>{item.label}</span>
-                    <span style={{ fontWeight: 700, color: "#fff" }}>R{item.price.toLocaleString()}</span>
+                    <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>R{item.price.toLocaleString()}</span>
                   </div>
                 ))}
             </div>
@@ -341,7 +344,7 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
                   fontFamily: "var(--font-serif)",
                   fontSize: "3rem",
                   fontWeight: 700,
-                  color: "var(--gold-light)",
+                  color: "var(--gold-deep)",
                   margin: "0.2rem 0",
                 }}
               >

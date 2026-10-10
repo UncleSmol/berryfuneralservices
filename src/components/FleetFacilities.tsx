@@ -22,7 +22,7 @@ export default function FleetFacilities() {
   };
 
   return (
-    <section id="fleet" style={{ padding: "7rem 0", background: "#050505", position: "relative" }}>
+    <section id="fleet" style={{ padding: "7rem 0", background: "var(--bg-obsidian)", position: "relative" }}>
       <div className="container">
         {/* Header */}
         <div style={{ marginBottom: "4.5rem", maxWidth: "860px" }}>
@@ -42,10 +42,11 @@ export default function FleetFacilities() {
           onMouseLeave={handleMouseLeave}
           className="card-3d-interactive gilded-bracket-box"
           style={{
-            background: "#080808",
+            background: "#ffffff",
             border: "1px solid var(--border-gold-hairline)",
             padding: "1rem",
             marginBottom: "3.5rem",
+            boxShadow: "0 10px 30px rgba(0, 0, 0, 0.05)",
             transform: `perspective(1100px) rotateY(${mousePos.x * 6}deg) rotateX(${-mousePos.y * 6}deg)`,
             transition: "transform 0.15s ease-out, box-shadow 0.3s ease",
           }}
@@ -65,7 +66,7 @@ export default function FleetFacilities() {
                 position: "relative",
                 minHeight: "420px",
                 overflow: "hidden",
-                background: "#000",
+                background: "#f0ece4",
               }}
               className="fleet-image-col"
             >
@@ -83,7 +84,7 @@ export default function FleetFacilities() {
                   "Climate-Controlled Family Passenger Vehicle",
                 ]}
                 intervalMs={4200}
-                overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 90%)"
+                overlayGradient="linear-gradient(180deg, rgba(245, 241, 232, 0.05) 0%, rgba(245, 241, 232, 0.45) 90%)"
                 caption="Cortege"
                 enableScrollFade={true}
               />
@@ -97,7 +98,7 @@ export default function FleetFacilities() {
               }}
               className="fleet-text-col"
             >
-              <h3 style={{ fontSize: "2rem", color: "#ffffff", marginBottom: "1.25rem", lineHeight: 1.2 }}>
+              <h3 style={{ fontSize: "2rem", color: "var(--text-primary)", marginBottom: "1.25rem", lineHeight: 1.2 }}>
                 Pristine Mercedes-Benz & Family Transport
               </h3>
               <p style={{ color: "var(--text-secondary)", fontSize: "1rem", lineHeight: 1.8, marginBottom: "2rem" }}>

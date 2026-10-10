@@ -170,19 +170,19 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
       id="services"
       style={{
         padding: "7rem 0",
-        background: "#000000",
+        background: "var(--bg-pure-black)",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Background Architectural Grid Lines & Dark Scrim */}
+      {/* Background Architectural Grid Lines */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
           backgroundImage:
-            "linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(184, 134, 11, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(184, 134, 11, 0.04) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
           maskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
           WebkitMaskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
@@ -190,7 +190,7 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
         }}
       />
 
-      {/* Atmospheric Shuffling Background with Scroll Fade (Hero-style dynamic photography) */}
+      {/* Atmospheric Shuffling Background with Scroll Fade */}
       <div
         style={{
           position: "absolute",
@@ -215,7 +215,7 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
             "Cathedral Stained Glass",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.72) 40%, rgba(0,0,0,0.96) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(251, 249, 245, 0.90) 0%, rgba(251, 249, 245, 0.72) 40%, rgba(251, 249, 245, 0.96) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -259,9 +259,10 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
                   fontWeight: 700,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  background: isActive ? "var(--gold-primary)" : "transparent",
-                  color: isActive ? "#000000" : "var(--text-secondary)",
-                  border: isActive ? "1px solid var(--gold-light)" : "1px solid rgba(255, 255, 255, 0.08)",
+                  background: isActive ? "var(--gold-primary)" : "#ffffff",
+                  color: isActive ? "#ffffff" : "var(--text-secondary)",
+                  border: isActive ? "1px solid var(--gold-primary)" : "1px solid var(--border-dark-subtle)",
+                  boxShadow: isActive ? "0 4px 12px rgba(184, 134, 11, 0.2)" : "0 1px 4px rgba(0,0,0,0.03)",
                   cursor: "pointer",
                   transition: "all 0.3s ease",
                 }}
@@ -279,7 +280,7 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
             gridTemplateColumns: "repeat(12, 1fr)",
             gap: "2.5rem",
             alignItems: "center",
-            background: "#080808",
+            background: "#ffffff",
             border: "1px solid var(--border-gold-hairline)",
             padding: "3.5rem 3rem",
             position: "relative",
@@ -315,7 +316,7 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
                 "White Roses Floral Tribute",
               ]}
               intervalMs={4600}
-              overlayGradient="linear-gradient(90deg, #080808 25%, rgba(8,8,8,0.7) 100%)"
+              overlayGradient="linear-gradient(90deg, #ffffff 25%, rgba(255,255,255,0.7) 100%)"
               showIndicators={false}
               enableScrollFade={true}
             />
@@ -330,7 +331,7 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
             }}
             className="service-left-col"
           >
-            <h3 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", color: "#ffffff", marginBottom: "1.25rem", lineHeight: 1.15 }}>
+            <h3 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", color: "var(--text-primary)", marginBottom: "1.25rem", lineHeight: 1.15 }}>
               {currentService.headline}
             </h3>
 
@@ -339,7 +340,7 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
             </p>
 
             <div style={{ marginBottom: "2rem" }}>
-              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-light)", fontWeight: 700, marginBottom: "1.2rem" }}>
+              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-deep)", fontWeight: 700, marginBottom: "1.2rem" }}>
                 Service Deliverables & Inclusions:
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
@@ -366,10 +367,11 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
           >
             <div
               style={{
-                background: "#0d0d0d",
+                background: "#F5F1E8",
                 border: "1px solid var(--border-gold-hairline)",
                 padding: "2.5rem 2rem",
                 textAlign: "center",
+                boxShadow: "0 6px 20px rgba(0, 0, 0, 0.04)",
               }}
             >
               <div style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--text-muted)", marginBottom: "0.5rem" }}>
@@ -380,7 +382,7 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
                   fontFamily: "var(--font-serif)",
                   fontSize: "2.2rem",
                   fontWeight: 700,
-                  color: "var(--gold-light)",
+                  color: "var(--gold-deep)",
                   marginBottom: "1rem",
                 }}
               >

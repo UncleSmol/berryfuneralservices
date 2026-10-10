@@ -139,19 +139,19 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
       ref={sectionRef}
       style={{
         padding: "7rem 0",
-        background: "#000000",
+        background: "var(--bg-pure-black)",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Background Architectural Grid Lines & Dark Scrim */}
+      {/* Background Architectural Grid Lines */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
           backgroundImage:
-            "linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(184, 134, 11, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(184, 134, 11, 0.04) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
           maskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
           WebkitMaskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
@@ -159,7 +159,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
         }}
       />
 
-      {/* Atmospheric Shuffling Background with Scroll Fade (Hero-style dynamic photography) */}
+      {/* Atmospheric Shuffling Background with Scroll Fade */}
       <div
         style={{
           position: "absolute",
@@ -186,7 +186,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
             "Cathedral Stained Glass Reverence",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.96) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(251, 249, 245, 0.90) 0%, rgba(251, 249, 245, 0.72) 40%, rgba(251, 249, 245, 0.96) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -202,7 +202,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
           zIndex: 1,
           fontFamily: "var(--font-serif)",
           fontSize: "clamp(8rem, 20vw, 22rem)",
-          color: "rgba(212, 175, 55, 0.03)",
+          color: "rgba(184, 134, 11, 0.04)",
           fontWeight: 700,
           lineHeight: 1,
           userSelect: "none",
@@ -227,9 +227,10 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
             <button
               onClick={() => setActiveTab("all")}
               style={{
-                background: activeTab === "all" ? "var(--gold-primary)" : "transparent",
-                color: activeTab === "all" ? "#000000" : "#ffffff",
-                border: "1px solid var(--border-gold-hairline)",
+                background: activeTab === "all" ? "var(--gold-primary)" : "#ffffff",
+                color: activeTab === "all" ? "#ffffff" : "var(--text-secondary)",
+                border: activeTab === "all" ? "1px solid var(--gold-primary)" : "1px solid var(--border-gold-hairline)",
+                boxShadow: activeTab === "all" ? "0 4px 12px rgba(184, 134, 11, 0.25)" : "0 1px 4px rgba(0,0,0,0.03)",
                 padding: "0.6rem 1.6rem",
                 fontSize: "0.78rem",
                 letterSpacing: "0.16em",
@@ -244,9 +245,10 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
             <button
               onClick={() => setActiveTab("society")}
               style={{
-                background: activeTab === "society" ? "var(--gold-primary)" : "transparent",
-                color: activeTab === "society" ? "#000000" : "#ffffff",
-                border: "1px solid var(--border-gold-hairline)",
+                background: activeTab === "society" ? "var(--gold-primary)" : "#ffffff",
+                color: activeTab === "society" ? "#ffffff" : "var(--text-secondary)",
+                border: activeTab === "society" ? "1px solid var(--gold-primary)" : "1px solid var(--border-gold-hairline)",
+                boxShadow: activeTab === "society" ? "0 4px 12px rgba(184, 134, 11, 0.25)" : "0 1px 4px rgba(0,0,0,0.03)",
                 padding: "0.6rem 1.6rem",
                 fontSize: "0.78rem",
                 letterSpacing: "0.16em",
@@ -278,11 +280,11 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                 style={{
                   gridColumn: "span 12",
                   position: "relative",
-                  background: "#080808",
+                  background: "#ffffff",
                   border: "1px solid var(--border-gold-hairline)",
                   overflow: "hidden",
                   padding: "3rem",
-                  boxShadow: "var(--shadow-3d)",
+                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.05)",
                 }}
                 className="plan-card-hero-1 gilded-bracket-box"
               >
@@ -310,7 +312,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                       "Bespoke Burial Casket",
                     ]}
                     intervalMs={3900}
-                    overlayGradient="linear-gradient(90deg, #080808 20%, rgba(8,8,8,0.7) 100%)"
+                    overlayGradient="linear-gradient(90deg, #ffffff 25%, rgba(255,255,255,0.78) 100%)"
                     showIndicators={false}
                     enableScrollFade={true}
                   />
@@ -320,9 +322,9 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                   <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.8rem" }}>
                     <span
                       style={{
-                        background: "rgba(212, 175, 55, 0.15)",
+                        background: "rgba(184, 134, 11, 0.12)",
                         border: "1px solid var(--gold-primary)",
-                        color: "var(--gold-light)",
+                        color: "var(--gold-deep)",
                         fontSize: "0.68rem",
                         letterSpacing: "0.15em",
                         textTransform: "uppercase",
@@ -334,7 +336,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.8rem)", color: "#ffffff", marginBottom: "0.5rem" }}>
+                  <h3 style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.8rem)", color: "var(--text-primary)", marginBottom: "0.5rem" }}>
                     No Waiting Period Plan
                   </h3>
                   <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.75rem" }}>
@@ -348,7 +350,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                       alignItems: "baseline",
                       gap: "1.5rem",
                       marginBottom: "1.5rem",
-                      background: "rgba(0, 0, 0, 0.75)",
+                      background: "var(--bg-obsidian)",
                       border: "1px solid var(--border-gold-hairline)",
                       padding: "1rem 1.5rem",
                       maxWidth: "420px",
@@ -358,18 +360,18 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                       <div style={{ fontSize: "0.7rem", textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: "0.1em" }}>
                         Cover Payout
                       </div>
-                      <div style={{ fontFamily: "var(--font-serif)", fontSize: "1.9rem", color: "var(--gold-light)", fontWeight: 700 }}>
+                      <div style={{ fontFamily: "var(--font-serif)", fontSize: "1.9rem", color: "var(--gold-deep)", fontWeight: 700 }}>
                         R3,000
                       </div>
                     </div>
-                    <div style={{ borderLeft: "1px solid var(--border-dark-subtle)", paddingLeft: "1.5rem" }}>
+                    <div style={{ borderLeft: "1px solid var(--border-gold-hairline)", paddingLeft: "1.5rem" }}>
                       <div style={{ fontSize: "0.7rem", textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: "0.1em" }}>
                         Monthly Premium
                       </div>
-                      <div style={{ fontSize: "0.95rem", color: "#ffffff", fontWeight: 700 }}>
+                      <div style={{ fontSize: "0.95rem", color: "var(--text-primary)", fontWeight: 700 }}>
                         16–64: <strong style={{ color: "var(--gold-primary)" }}>R260/m</strong>
                       </div>
-                      <div style={{ fontSize: "0.95rem", color: "#ffffff", fontWeight: 700 }}>
+                      <div style={{ fontSize: "0.95rem", color: "var(--text-primary)", fontWeight: 700 }}>
                         65–75: <strong style={{ color: "var(--gold-primary)" }}>R330/m</strong>
                       </div>
                     </div>
@@ -424,11 +426,11 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                 style={{
                   gridColumn: "span 12",
                   position: "relative",
-                  background: "#080808",
+                  background: "#ffffff",
                   border: "1px solid var(--border-gold-hairline)",
                   overflow: "hidden",
                   padding: "3rem",
-                  boxShadow: "var(--shadow-3d)",
+                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.05)",
                 }}
                 className="plan-card-hero-2 gilded-bracket-box"
               >
@@ -457,7 +459,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                       "Cathedral Sacred Atmosphere",
                     ]}
                     intervalMs={4300}
-                    overlayGradient="linear-gradient(90deg, #080808 25%, rgba(8,8,8,0.75) 100%)"
+                    overlayGradient="linear-gradient(90deg, #ffffff 25%, rgba(255,255,255,0.78) 100%)"
                     showIndicators={false}
                     enableScrollFade={true}
                   />
@@ -467,9 +469,9 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                   <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.8rem" }}>
                     <span
                       style={{
-                        background: "rgba(212, 175, 55, 0.15)",
+                        background: "rgba(184, 134, 11, 0.12)",
                         border: "1px solid var(--gold-primary)",
-                        color: "var(--gold-light)",
+                        color: "var(--gold-deep)",
                         fontSize: "0.68rem",
                         letterSpacing: "0.15em",
                         textTransform: "uppercase",
@@ -481,7 +483,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)", color: "#ffffff", marginBottom: "0.5rem" }}>
+                  <h3 style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)", color: "var(--text-primary)", marginBottom: "0.5rem" }}>
                     Executive Plan
                   </h3>
                   <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.75rem" }}>
@@ -491,7 +493,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                   {/* Pricing Box */}
                   <div
                     style={{
-                      background: "rgba(0, 0, 0, 0.75)",
+                      background: "var(--bg-obsidian)",
                       border: "1px solid var(--border-gold-hairline)",
                       padding: "1rem 1.5rem",
                       marginBottom: "1.5rem",
@@ -502,7 +504,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                         <div style={{ fontSize: "0.7rem", textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: "0.1em" }}>
                           Cover Amount
                         </div>
-                        <div style={{ fontFamily: "var(--font-serif)", fontSize: "1.9rem", color: "var(--gold-light)", fontWeight: 700 }}>
+                        <div style={{ fontFamily: "var(--font-serif)", fontSize: "1.9rem", color: "var(--gold-deep)", fontWeight: 700 }}>
                           R10,000
                         </div>
                       </div>
@@ -510,7 +512,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                         <div style={{ fontSize: "0.7rem", textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: "0.1em" }}>
                           Premiums Start From
                         </div>
-                        <div style={{ fontFamily: "var(--font-serif)", fontSize: "1.5rem", color: "#ffffff", fontWeight: 700 }}>
+                        <div style={{ fontFamily: "var(--font-serif)", fontSize: "1.5rem", color: "var(--text-primary)", fontWeight: 700 }}>
                           R550 / m
                         </div>
                       </div>
@@ -577,13 +579,14 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                   key={plan.id}
                   className="card-3d-interactive"
                   style={{
-                    background: "#080808",
+                    background: "#ffffff",
                     border: "1px solid var(--border-gold-hairline)",
                     padding: "2.5rem 2rem",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
                     position: "relative",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.04)",
                   }}
                 >
                   <div
@@ -592,28 +595,28 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                       justifyContent: "flex-end",
                       alignItems: "center",
                       marginBottom: "1.25rem",
-                      borderBottom: "1px solid var(--border-dark-subtle)",
+                      borderBottom: "1px solid var(--border-gold-hairline)",
                       paddingBottom: "0.75rem",
                     }}
                   >
-                    <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "var(--gold-primary)", letterSpacing: "0.15em", fontWeight: 700 }}>
+                    <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "var(--gold-deep)", letterSpacing: "0.15em", fontWeight: 700 }}>
                       {plan.members}
                     </span>
                   </div>
 
                   <div>
-                    <h3 style={{ fontSize: "1.6rem", color: "#ffffff", marginBottom: "0.25rem" }}>
+                    <h3 style={{ fontSize: "1.6rem", color: "var(--text-primary)", marginBottom: "0.25rem" }}>
                       {plan.name}
                     </h3>
-                    <div style={{ fontSize: "0.8rem", color: "var(--gold-light)", marginBottom: "1.5rem" }}>
+                    <div style={{ fontSize: "0.8rem", color: "var(--text-muted)", marginBottom: "1.5rem" }}>
                       {plan.subtitle}
                     </div>
 
                     {/* Price Block */}
                     <div
                       style={{
-                        background: "#0d0d0d",
-                        border: "1px solid var(--border-dark-subtle)",
+                        background: "var(--bg-obsidian)",
+                        border: "1px solid var(--border-gold-hairline)",
                         padding: "1rem",
                         marginBottom: "1.5rem",
                       }}
@@ -622,19 +625,19 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                         <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "var(--text-muted)" }}>
                           Cover Amount:
                         </span>
-                        <strong style={{ fontFamily: "var(--font-serif)", fontSize: "1.1rem", color: "var(--gold-light)" }}>
+                        <strong style={{ fontFamily: "var(--font-serif)", fontSize: "1.1rem", color: "var(--gold-deep)" }}>
                           {plan.coverAmount}
                         </strong>
                       </div>
                       {plan.premiums.map((p, idx) => (
                         <div key={idx} style={{ display: "flex", justifyContent: "space-between", fontSize: "0.85rem", color: "var(--text-secondary)" }}>
                           <span>Ages {p.age}:</span>
-                          <strong style={{ color: "#ffffff" }}>{p.price}</strong>
+                          <strong style={{ color: "var(--text-primary)" }}>{p.price}</strong>
                         </div>
                       ))}
                     </div>
 
-                    <div style={{ fontSize: "0.78rem", textTransform: "uppercase", color: "var(--gold-primary)", letterSpacing: "0.1em", marginBottom: "0.6rem" }}>
+                    <div style={{ fontSize: "0.78rem", textTransform: "uppercase", color: "var(--gold-deep)", letterSpacing: "0.1em", marginBottom: "0.6rem", fontWeight: 600 }}>
                       Coffin: {plan.coffin}
                     </div>
 
@@ -670,10 +673,11 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
             className="gilded-bracket-box"
             style={{
               padding: "4rem 3rem",
-              background: "#080808",
-              border: "1px solid var(--border-gold-strong)",
+              background: "#ffffff",
+              border: "1px solid var(--gold-primary)",
               position: "relative",
               overflow: "hidden",
+              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.05)",
             }}
           >
             {/* Shuffling Burial Society Fleet Imagery with Scroll Fade */}
@@ -699,7 +703,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                   "Dignified cortege transport",
                 ]}
                 intervalMs={4400}
-                overlayGradient="linear-gradient(90deg, #080808 20%, rgba(8,8,8,0.72) 100%)"
+                overlayGradient="linear-gradient(90deg, #ffffff 20%, rgba(255,255,255,0.72) 100%)"
                 showIndicators={false}
                 enableScrollFade={true}
               />
@@ -716,10 +720,10 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
               }}
             >
               <div style={{ gridColumn: "span 12" }} className="society-left-col">
-                <div style={{ fontSize: "0.75rem", color: "var(--gold-primary)", letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, marginBottom: "0.75rem" }}>
+                <div style={{ fontSize: "0.75rem", color: "var(--gold-deep)", letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, marginBottom: "0.75rem" }}>
                   Group & Stokvel Scheme • 1 Primary + 9 Beneficiaries
                 </div>
-                <h3 style={{ fontSize: "clamp(2rem, 3.8vw, 3.2rem)", color: "#ffffff", marginBottom: "1rem" }}>
+                <h3 style={{ fontSize: "clamp(2rem, 3.8vw, 3.2rem)", color: "var(--text-primary)", marginBottom: "1rem" }}>
                   Burial Society Group Scheme
                 </h3>
                 <p style={{ color: "var(--text-secondary)", fontSize: "1.05rem", lineHeight: 1.8, marginBottom: "2rem" }}>
@@ -739,7 +743,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                 >
                   <div
                     style={{
-                      background: "#000000",
+                      background: "var(--bg-obsidian)",
                       border: "1px solid var(--border-gold-hairline)",
                       padding: "1.5rem",
                     }}
@@ -747,14 +751,14 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                     <div style={{ fontSize: "0.72rem", textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: "0.15em" }}>
                       Total Society Cover
                     </div>
-                    <div style={{ fontFamily: "var(--font-serif)", fontSize: "2.4rem", color: "var(--gold-light)", fontWeight: 700 }}>
+                    <div style={{ fontFamily: "var(--font-serif)", fontSize: "2.4rem", color: "var(--gold-deep)", fontWeight: 700 }}>
                       R15,000.00
                     </div>
                   </div>
 
                   <div
                     style={{
-                      background: "#000000",
+                      background: "var(--bg-obsidian)",
                       border: "1px solid var(--border-gold-hairline)",
                       padding: "1.5rem",
                     }}
@@ -762,10 +766,10 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                     <div style={{ fontSize: "0.72rem", textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: "0.15em" }}>
                       Monthly Society Premiums
                     </div>
-                    <div style={{ fontSize: "1rem", color: "#ffffff", marginTop: "0.4rem" }}>
+                    <div style={{ fontSize: "1rem", color: "var(--text-primary)", marginTop: "0.4rem" }}>
                       16–64: <strong style={{ color: "var(--gold-primary)" }}>R200 / month</strong>
                     </div>
-                    <div style={{ fontSize: "1rem", color: "#ffffff", marginTop: "0.2rem" }}>
+                    <div style={{ fontSize: "1rem", color: "var(--text-primary)", marginTop: "0.2rem" }}>
                       65–75: <strong style={{ color: "var(--gold-primary)" }}>R260 / month</strong>
                     </div>
                   </div>
@@ -785,12 +789,12 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
               <div style={{ gridColumn: "span 12" }} className="society-right-col">
                 <div
                   style={{
-                    background: "#0d0d0d",
+                    background: "var(--bg-obsidian)",
                     border: "1px solid var(--border-gold-hairline)",
                     padding: "2.5rem",
                   }}
                 >
-                  <div style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--gold-primary)", fontWeight: 700, marginBottom: "1.25rem" }}>
+                  <div style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--gold-deep)", fontWeight: 700, marginBottom: "1.25rem" }}>
                     Guaranteed Society Inclusions:
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>

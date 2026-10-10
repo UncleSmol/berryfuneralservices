@@ -13,14 +13,15 @@ export default function Header({ onOpenArrangementModal }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header style={{ position: "sticky", top: 0, zIndex: 100, width: "100%", background: "#000000" }}>
+    <header style={{ position: "sticky", top: 0, zIndex: 100, width: "100%", background: "var(--bg-pure-black)" }}>
       {/* Main Architectural Navigation Bar */}
       <nav
         style={{
-          background: "rgba(0, 0, 0, 0.95)",
+          background: "rgba(255, 255, 255, 0.95)",
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
           borderBottom: "1px solid var(--border-gold-hairline)",
+          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.03)",
         }}
       >
         <div
@@ -50,8 +51,8 @@ export default function Header({ onOpenArrangementModal }: HeaderProps) {
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                boxShadow: "0 2px 12px rgba(0, 0, 0, 0.45), 0 0 15px rgba(212, 175, 55, 0.2)",
-                border: "1px solid rgba(212, 175, 55, 0.4)",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05), 0 0 10px rgba(184, 134, 11, 0.12)",
+                border: "1px solid var(--border-gold-hairline)",
               }}
             >
               <Image
@@ -131,7 +132,7 @@ export default function Header({ onOpenArrangementModal }: HeaderProps) {
               aria-label="Toggle menu"
               style={{
                 background: "transparent",
-                color: "#ffffff",
+                color: "var(--text-primary)",
                 padding: "0.4rem",
                 display: "inline-flex",
                 alignItems: "center",
@@ -148,12 +149,13 @@ export default function Header({ onOpenArrangementModal }: HeaderProps) {
         {mobileMenuOpen && (
           <div
             style={{
-              background: "#080808",
+              background: "#ffffff",
               borderTop: "1px solid var(--border-gold-hairline)",
               padding: "2rem",
               display: "flex",
               flexDirection: "column",
               gap: "1.4rem",
+              boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
             }}
           >
             {[
@@ -169,9 +171,10 @@ export default function Header({ onOpenArrangementModal }: HeaderProps) {
                 onClick={() => setMobileMenuOpen(false)}
                 style={{
                   fontSize: "0.95rem",
-                  color: "#ffffff",
+                  color: "var(--text-primary)",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
+                  fontWeight: 600,
                 }}
               >
                 {link.label}

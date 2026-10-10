@@ -158,19 +158,19 @@ export default function TributeWall() {
       id="tributes"
       style={{
         padding: "7rem 0",
-        background: "#000000",
+        background: "var(--bg-pure-black)",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Background Architectural Grid Lines & Dark Scrim */}
+      {/* Background Architectural Grid Lines & Scrim */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
           backgroundImage:
-            "linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(184, 134, 11, 0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(184, 134, 11, 0.07) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
           maskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
           WebkitMaskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
@@ -203,7 +203,7 @@ export default function TributeWall() {
             "Warm vigil candle glow",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.96) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(251, 249, 245, 0.92) 0%, rgba(251, 249, 245, 0.74) 40%, rgba(251, 249, 245, 0.98) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -227,9 +227,10 @@ export default function TributeWall() {
             style={{
               display: "flex",
               alignItems: "center",
-              background: "#080808",
+              background: "#ffffff",
               border: "1px solid var(--border-gold-hairline)",
               padding: "0.75rem 1.25rem",
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.04)",
             }}
           >
             <Search size={16} color="var(--gold-primary)" style={{ marginRight: "0.75rem" }} />
@@ -243,7 +244,7 @@ export default function TributeWall() {
                 background: "transparent",
                 border: "none",
                 outline: "none",
-                color: "#fff",
+                color: "var(--text-primary)",
                 fontSize: "0.9rem",
               }}
             />
@@ -269,7 +270,7 @@ export default function TributeWall() {
             }}
             className="tribute-list-col"
           >
-            <div style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-primary)", fontWeight: 700 }}>
+            <div style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-deep)", fontWeight: 700 }}>
               Recent Notices
             </div>
 
@@ -282,8 +283,9 @@ export default function TributeWall() {
                   style={{
                     padding: "1.5rem",
                     cursor: "pointer",
-                    background: isSelected ? "#0f0f0f" : "#060606",
-                    border: isSelected ? "1px solid var(--gold-primary)" : "1px solid var(--border-dark-subtle)",
+                    background: isSelected ? "var(--bg-obsidian)" : "#ffffff",
+                    border: isSelected ? "1px solid var(--gold-primary)" : "1px solid var(--border-gold-hairline)",
+                    boxShadow: isSelected ? "0 4px 14px rgba(184, 134, 11, 0.15)" : "0 2px 6px rgba(0,0,0,0.02)",
                     transition: "all 0.3s ease",
                   }}
                 >
@@ -302,10 +304,10 @@ export default function TributeWall() {
                     </div>
 
                     <div style={{ flex: 1 }}>
-                      <h4 style={{ fontSize: "1rem", color: "#fff", marginBottom: "0.2rem" }}>
+                      <h4 style={{ fontSize: "1rem", color: "var(--text-primary)", marginBottom: "0.2rem" }}>
                         {item.name}
                       </h4>
-                      <div style={{ fontSize: "0.78rem", color: "var(--gold-light)", fontFamily: "var(--font-serif)" }}>
+                      <div style={{ fontSize: "0.78rem", color: "var(--gold-deep)", fontFamily: "var(--font-serif)", fontWeight: 600 }}>
                         {item.years}
                       </div>
                       <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>
@@ -316,10 +318,10 @@ export default function TributeWall() {
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                       <Flame
                         size={18}
-                        color={item.userLitCandle ? "#f59e0b" : "var(--text-muted)"}
+                        color={item.userLitCandle ? "#d97706" : "var(--text-muted)"}
                         className={item.userLitCandle ? "flame-animated" : ""}
                       />
-                      <span style={{ fontSize: "0.75rem", color: "var(--gold-light)", fontWeight: 700 }}>
+                      <span style={{ fontSize: "0.75rem", color: "var(--gold-deep)", fontWeight: 700 }}>
                         {item.candles}
                       </span>
                     </div>
@@ -333,23 +335,23 @@ export default function TributeWall() {
           <div
             style={{
               gridColumn: "span 12",
-              background: "#080808",
+              background: "#ffffff",
               border: "1px solid var(--border-gold-hairline)",
               padding: "3rem 2.5rem",
-              boxShadow: "var(--shadow-3d)",
+              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.05)",
             }}
             className="tribute-detail-col gilded-bracket-box"
           >
             <div style={{ borderBottom: "1px solid var(--border-gold-hairline)", paddingBottom: "1.75rem", marginBottom: "2rem" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "1rem" }}>
                 <div>
-                  <div style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-primary)", fontWeight: 700 }}>
+                  <div style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-deep)", fontWeight: 700 }}>
                     In Sacred Memory
                   </div>
-                  <h3 style={{ fontSize: "clamp(1.8rem, 3vw, 2.4rem)", color: "#ffffff", marginTop: "0.3rem" }}>
+                  <h3 style={{ fontSize: "clamp(1.8rem, 3vw, 2.4rem)", color: "var(--text-primary)", marginTop: "0.3rem" }}>
                     {activeTribute.name}
                   </h3>
-                  <div style={{ fontSize: "1rem", color: "var(--gold-light)", fontFamily: "var(--font-serif)" }}>
+                  <div style={{ fontSize: "1rem", color: "var(--gold-deep)", fontFamily: "var(--font-serif)", fontWeight: 600 }}>
                     {activeTribute.years}
                   </div>
                 </div>
@@ -362,20 +364,21 @@ export default function TributeWall() {
                     alignItems: "center",
                     gap: "0.6rem",
                     padding: "0.75rem 1.4rem",
-                    background: activeTribute.userLitCandle ? "var(--gold-primary)" : "#000000",
+                    background: activeTribute.userLitCandle ? "var(--gold-primary)" : "#ffffff",
                     border: "1px solid var(--gold-primary)",
-                    color: activeTribute.userLitCandle ? "#000000" : "#ffffff",
+                    color: activeTribute.userLitCandle ? "#ffffff" : "var(--text-primary)",
                     fontWeight: 700,
                     fontSize: "0.82rem",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
                     cursor: "pointer",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
                     transition: "all 0.3s ease",
                   }}
                 >
                   <Flame
                     size={17}
-                    color={activeTribute.userLitCandle ? "#000000" : "#f59e0b"}
+                    color={activeTribute.userLitCandle ? "#ffffff" : "#d97706"}
                     className={activeTribute.userLitCandle ? "flame-animated" : ""}
                   />
                   <span>{activeTribute.userLitCandle ? "Candle Lit" : "Light Candle"}</span>
@@ -387,8 +390,8 @@ export default function TributeWall() {
               <div
                 style={{
                   marginTop: "1.5rem",
-                  background: "#000000",
-                  border: "1px solid var(--border-dark-subtle)",
+                  background: "var(--bg-obsidian)",
+                  border: "1px solid var(--border-gold-hairline)",
                   padding: "1rem 1.25rem",
                   display: "flex",
                   flexDirection: "column",
@@ -396,11 +399,11 @@ export default function TributeWall() {
                   fontSize: "0.85rem",
                 }}
               >
-                <div style={{ color: "#ffffff" }}>
-                  <strong style={{ color: "var(--gold-primary)" }}>Service Date:</strong> {activeTribute.serviceDate}
+                <div style={{ color: "var(--text-primary)" }}>
+                  <strong style={{ color: "var(--gold-deep)" }}>Service Date:</strong> {activeTribute.serviceDate}
                 </div>
-                <div style={{ color: "var(--text-muted)" }}>
-                  <strong style={{ color: "var(--gold-primary)" }}>Venue:</strong> {activeTribute.serviceLocation}
+                <div style={{ color: "var(--text-secondary)" }}>
+                  <strong style={{ color: "var(--gold-deep)" }}>Venue:</strong> {activeTribute.serviceLocation}
                 </div>
               </div>
 
@@ -411,7 +414,7 @@ export default function TributeWall() {
 
             {/* Condolences form & guestbook */}
             <div>
-              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-primary)", fontWeight: 700, marginBottom: "1rem" }}>
+              <div style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--gold-deep)", fontWeight: 700, marginBottom: "1rem" }}>
                 Condolence Messages ({activeTribute.condolences.length})
               </div>
 
@@ -425,9 +428,9 @@ export default function TributeWall() {
                     onChange={(e) => setNewAuthor(e.target.value)}
                     style={{
                       padding: "0.75rem 1rem",
-                      background: "#000000",
-                      border: "1px solid var(--border-dark-subtle)",
-                      color: "#fff",
+                      background: "#ffffff",
+                      border: "1px solid var(--border-gold-hairline)",
+                      color: "var(--text-primary)",
                       fontSize: "0.88rem",
                       outline: "none",
                     }}
@@ -439,9 +442,9 @@ export default function TributeWall() {
                     onChange={(e) => setNewRelation(e.target.value)}
                     style={{
                       padding: "0.75rem 1rem",
-                      background: "#000000",
-                      border: "1px solid var(--border-dark-subtle)",
-                      color: "#fff",
+                      background: "#ffffff",
+                      border: "1px solid var(--border-gold-hairline)",
+                      color: "var(--text-primary)",
                       fontSize: "0.88rem",
                       outline: "none",
                     }}
@@ -456,9 +459,9 @@ export default function TributeWall() {
                   style={{
                     width: "100%",
                     padding: "0.75rem 1rem",
-                    background: "#000000",
-                    border: "1px solid var(--border-dark-subtle)",
-                    color: "#fff",
+                    background: "#ffffff",
+                    border: "1px solid var(--border-gold-hairline)",
+                    color: "var(--text-primary)",
                     fontSize: "0.88rem",
                     outline: "none",
                     resize: "vertical",
@@ -481,15 +484,15 @@ export default function TributeWall() {
                   <div
                     key={idx}
                     style={{
-                      background: "#000000",
-                      border: "1px solid var(--border-dark-subtle)",
+                      background: "var(--bg-obsidian)",
+                      border: "1px solid var(--border-gold-hairline)",
                       padding: "1rem 1.25rem",
                     }}
                   >
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.25rem" }}>
-                      <span style={{ fontWeight: 700, color: "#fff", fontSize: "0.88rem" }}>
+                      <span style={{ fontWeight: 700, color: "var(--text-primary)", fontSize: "0.88rem" }}>
                         {c.author}{" "}
-                        <span style={{ color: "var(--gold-primary)", fontWeight: 400, fontSize: "0.78rem" }}>
+                        <span style={{ color: "var(--gold-deep)", fontWeight: 400, fontSize: "0.78rem" }}>
                           ({c.relation})
                         </span>
                       </span>
