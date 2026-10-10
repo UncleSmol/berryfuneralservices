@@ -100,7 +100,7 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
             "Cathedral Stained Glass Reverence",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.60) 40%, rgba(0,0,0,0.92) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.52) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -164,7 +164,7 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
                 letterSpacing: "0.02em",
                 color: "#ffffff",
                 marginBottom: "1.75rem",
-                textShadow: "0 2px 20px rgba(0, 0, 0, 0.9)",
+                textShadow: "0 2px 25px rgba(0, 0, 0, 0.95), 0 1px 6px rgba(0, 0, 0, 0.9)",
               }}
             >
               Dignified Last Goodbye to{" "}
@@ -182,7 +182,7 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
             {/* Editorial Paragraph with high legibility contrast */}
             <div
               style={{
-                background: "rgba(0, 0, 0, 0.75)",
+                background: "rgba(0, 0, 0, 0.58)",
                 backdropFilter: "blur(12px)",
                 WebkitBackdropFilter: "blur(12px)",
                 border: "1px solid var(--border-gold-hairline)",
