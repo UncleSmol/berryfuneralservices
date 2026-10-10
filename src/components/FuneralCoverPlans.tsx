@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { ShieldCheck, Check, ArrowRight, ArrowUpRight, Sparkles, Users } from "lucide-react";
 import SectionImageShuffler from "@/components/SectionImageShuffler";
@@ -12,6 +12,7 @@ interface FuneralCoverPlansProps {
 export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCoverPlansProps) {
   const [activeTab, setActiveTab] = useState<"all" | "society">("all");
   const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const plans = [
     {
@@ -132,7 +133,62 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
   ];
 
   return (
-    <section id="plans" style={{ padding: "7rem 0", background: "#000000", position: "relative" }}>
+    <section
+      id="plans"
+      ref={sectionRef}
+      style={{
+        padding: "7rem 0",
+        background: "#000000",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Background Architectural Grid Lines & Dark Scrim */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          pointerEvents: "none",
+          backgroundImage:
+            "linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+          maskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(circle at 50% 40%, black 20%, transparent 80%)",
+          zIndex: 1,
+        }}
+      />
+
+      {/* Atmospheric Shuffling Background with Scroll Fade (Hero-style dynamic photography) */}
+      <div
+        style={{
+          position: "absolute",
+          inset: "-10% 0",
+          zIndex: 0,
+          pointerEvents: "none",
+        }}
+      >
+        <SectionImageShuffler
+          images={[
+            "/images/hero-image-homepage.jpg",
+            "/images/hero-image2-homepage.jpg",
+            "/images/hero-chapel.jpg",
+            "/images/pexels-cathedral-stainedglass.jpg",
+            "/images/pexels-sanctuary-hall.jpg",
+          ]}
+          alts={[
+            "Berry Funeral Services Sanctuary",
+            "Memorial Chapel Service",
+            "Dignified Sanctuary Chapel",
+            "Cathedral Stained Glass Reverence",
+            "Sacred Sanctuary Hall",
+          ]}
+          intervalMs={4800}
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.96) 100%)"
+          showIndicators={false}
+          enableScrollFade={true}
+        />
+      </div>
+
       {/* Background Architectural Watermark */}
       <div
         style={{
@@ -140,10 +196,10 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
           top: "5%",
           right: "-5%",
           pointerEvents: "none",
-          zIndex: 0,
+          zIndex: 1,
           fontFamily: "var(--font-serif)",
           fontSize: "clamp(8rem, 20vw, 22rem)",
-          color: "rgba(212, 175, 55, 0.02)",
+          color: "rgba(212, 175, 55, 0.03)",
           fontWeight: 700,
           lineHeight: 1,
           userSelect: "none",
@@ -152,7 +208,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
         POLICIES
       </div>
 
-      <div className="container" style={{ position: "relative", zIndex: 1 }}>
+      <div className="container" style={{ position: "relative", zIndex: 2 }}>
         {/* Editorial Section Header */}
         <div style={{ marginBottom: "4.5rem", maxWidth: "900px" }}>
           <h2 className="section-title" style={{ textAlign: "left", marginBottom: "1rem" }}>
