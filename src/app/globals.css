@@ -1,0 +1,399 @@
+:root {
+  --bg-pure-black: #000000;
+  --bg-obsidian: #050505;
+  --bg-charcoal: #0a0a0a;
+  --bg-surface: #101010;
+  --bg-surface-elevated: #161616;
+  --bg-surface-translucent: rgba(12, 12, 12, 0.85);
+
+  /* Gold Accent System */
+  --gold-primary: #d4af37;
+  --gold-light: #f5e7b2;
+  --gold-metallic: #c5a059;
+  --gold-deep: #8f6e24;
+  --gold-bronze: #6b5118;
+  --gold-gradient: linear-gradient(135deg, #faebd7 0%, #d4af37 50%, #8f6e24 100%);
+  --gold-gradient-subtle: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.02) 100%);
+
+  /* Borders & Hairlines - Sharp & Architectural */
+  --border-gold-hairline: rgba(212, 175, 55, 0.22);
+  --border-gold-strong: rgba(212, 175, 55, 0.65);
+  --border-dark-subtle: rgba(255, 255, 255, 0.07);
+  --border-dark-medium: rgba(255, 255, 255, 0.14);
+
+  /* Typography */
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted: #828894;
+  --text-gold: #e2c266;
+
+  --font-serif: var(--font-cinzel), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Zero / Minimal Radius for High Fashion Awwwards Look */
+  --radius-none: 0px;
+  --radius-sharp: 2px;
+  --radius-pill: 9999px;
+
+  /* Shadows & Glows */
+  --shadow-3d: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.08);
+  --shadow-deep: 0 30px 80px rgba(0, 0, 0, 0.95);
+  --gold-glow-subtle: 0 0 25px rgba(212, 175, 55, 0.16);
+  --gold-glow-hover: 0 0 35px rgba(212, 175, 55, 0.35);
+
+  --transition-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-pure-black);
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-pure-black);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+  /* Subtle architectural ambient noise + atmospheric vignette */
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.07) 0%, transparent 55%),
+    radial-gradient(circle at 85% 35%, rgba(197, 160, 89, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 15% 75%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Subtle Film Grain Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s var(--transition-editorial);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: var(--radius-none);
+}
+
+input, textarea, select {
+  font-family: inherit;
+  border-radius: var(--radius-none);
+}
+
+/* Luxury Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c1c1c;
+  border-left: 1px solid rgba(212, 175, 55, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-metallic);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 3.5rem;
+  }
+}
+
+/* Architectural Hairline Divider */
+.hairline-gold {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--border-gold-hairline) 20%, var(--border-gold-hairline) 80%, transparent 100%);
+  margin: 2rem 0;
+}
+
+/* Editorial Index Label */
+.editorial-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--gold-primary);
+  border-left: 2px solid var(--gold-primary);
+  padding-left: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+/* Gold Gradient Typography */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #f6e8b8 35%, #d4af37 70%, #997825 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Monogram Corner Brackets (High-Fashion Editorial Detail) */
+.gilded-bracket-box {
+  position: relative;
+  background: var(--bg-charcoal);
+  border: 1px solid var(--border-gold-hairline);
+  padding: 2.5rem;
+  transition: all 0.4s var(--transition-editorial);
+}
+
+.gilded-bracket-box::before,
+.gilded-bracket-box::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--gold-primary);
+  pointer-events: none;
+  transition: all 0.3s var(--transition-editorial);
+}
+
+.gilded-bracket-box::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--gold-primary);
+  border-left: 2px solid var(--gold-primary);
+}
+
+.gilded-bracket-box::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--gold-primary);
+  border-right: 2px solid var(--gold-primary);
+}
+
+.gilded-bracket-box:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: var(--shadow-3d);
+}
+
+.gilded-bracket-box:hover::before,
+.gilded-bracket-box:after {
+  width: 16px;
+  height: 16px;
+}
+
+/* Sharp Architectural Luxury Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #dfbc4d 0%, #d4af37 60%, #967421 100%);
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.95rem 2rem;
+  border-radius: var(--radius-none);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s var(--transition-editorial);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #fae8b4 0%, #e2be4b 60%, #b38b29 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+  color: #000000;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid var(--border-gold-hairline);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.95rem 2rem;
+  border-radius: var(--radius-none);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: all 0.35s var(--transition-editorial);
+}
+
+.btn-outline:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-emergency {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid var(--gold-primary);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-none);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative;
+  transition: all 0.3s var(--transition-editorial);
+}
+
+.btn-emergency:hover {
+  background: var(--gold-primary);
+  color: #000000;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  transform: translateY(-1px);
+}
+
+/* 3D Transform Utilities */
+.card-3d-interactive {
+  transition: transform 0.4s var(--transition-editorial), box-shadow 0.4s var(--transition-editorial);
+  transform-style: preserve-3d;
+}
+
+.card-3d-interactive:hover {
+  transform: translateY(-6px) rotateX(1.5deg) rotateY(-1.5deg);
+  box-shadow: var(--shadow-3d);
+}
+
+/* Editorial Overlap Text Scrim */
+.scrim-legibility {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.75) 40%,
+    rgba(0, 0, 0, 0.96) 100%
+  );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Section Header Typography */
+.section-header {
+  max-width: 860px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  line-height: 1.12;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.04em;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Realistic Warm Candle Flame */
+@keyframes flameWiggle {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 10px #f59e0b) drop-shadow(0 0 20px #d97706);
+  }
+  25% {
+    transform: scale(1.08, 0.96) rotate(1.5deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 14px #fbbf24) drop-shadow(0 0 24px #d97706);
+  }
+  50% {
+    transform: scale(0.96, 1.04) rotate(-2deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 10px #f59e0b) drop-shadow(0 0 18px #b45309);
+  }
+  75% {
+    transform: scale(1.04, 1.01) rotate(1deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 16px #fde047) drop-shadow(0 0 26px #f59e0b);
+  }
+}
+
+.flame-animated {
+  animation: flameWiggle 2.2s infinite ease-in-out;
+  transform-origin: center bottom;
+}
+
+/* Pulse for Live Dispatch Indicator */
+@keyframes goldPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(212, 175, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+.pulse-indicator {
+  width: 7px;
+  height: 7px;
+  background-color: var(--gold-primary);
+  border-radius: 50%;
+  display: inline-block;
+  animation: goldPulse 2s infinite;
+}
