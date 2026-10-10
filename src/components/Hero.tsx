@@ -100,7 +100,7 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
             "Cathedral Stained Glass Reverence",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(251, 249, 245, 0.90) 0%, rgba(251, 249, 245, 0.72) 40%, rgba(251, 249, 245, 0.98) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.60) 40%, rgba(0,0,0,0.92) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -118,7 +118,7 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
           fontFamily: "var(--font-serif)",
           fontSize: "clamp(6rem, 16vw, 18rem)",
           fontWeight: 700,
-          color: "rgba(212, 175, 55, 0.03)",
+          color: "rgba(212, 175, 55, 0.05)",
           letterSpacing: "0.08em",
           lineHeight: 0.85,
           userSelect: "none",
@@ -155,9 +155,6 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
             }}
             className="hero-left-col"
           >
-            {/* Editorial Metadata Tag */}
-
-
             {/* Monumental Editorial Headline overlapping image */}
             <h1
               style={{
@@ -165,9 +162,9 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
                 lineHeight: 1.05,
                 fontWeight: 600,
                 letterSpacing: "0.02em",
-                color: "var(--text-primary)",
+                color: "#ffffff",
                 marginBottom: "1.75rem",
-                textShadow: "0 2px 20px rgba(255, 255, 255, 0.8)",
+                textShadow: "0 2px 20px rgba(0, 0, 0, 0.9)",
               }}
             >
               Dignified Last Goodbye to{" "}
@@ -185,12 +182,12 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
             {/* Editorial Paragraph with high legibility contrast */}
             <div
               style={{
-                background: "rgba(255, 255, 255, 0.92)",
-                backdropFilter: "blur(10px)",
-                WebkitBackdropFilter: "blur(10px)",
+                background: "rgba(0, 0, 0, 0.75)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
                 border: "1px solid var(--border-gold-hairline)",
                 borderLeft: "3px solid var(--gold-primary)",
-                boxShadow: "0 8px 30px rgba(0, 0, 0, 0.05)",
+                boxShadow: "0 8px 30px rgba(0, 0, 0, 0.35)",
                 padding: "1.25rem 1.75rem",
                 maxWidth: "640px",
                 marginBottom: "2.5rem",
@@ -200,7 +197,7 @@ export default function Hero({ onOpenArrangementModal, onScrollToSection }: Hero
                 style={{
                   fontSize: "1.05rem",
                   lineHeight: 1.8,
-                  color: "var(--text-secondary)",
+                  color: "#e2e8f0",
                 }}
               >
                 Take control of the unexpected. Bury your loved ones with dignity and respect with

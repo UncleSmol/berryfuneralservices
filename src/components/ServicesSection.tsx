@@ -197,6 +197,7 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
           inset: "-10% 0",
           zIndex: 0,
           pointerEvents: "none",
+          opacity: 0.18,
         }}
       >
         <SectionImageShuffler
@@ -215,7 +216,7 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
             "Cathedral Stained Glass",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(251, 249, 245, 0.90) 0%, rgba(251, 249, 245, 0.72) 40%, rgba(251, 249, 245, 0.96) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.96) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -316,7 +317,7 @@ export default function ServicesSection({ onOpenArrangementModal }: ServicesSect
                 "White Roses Floral Tribute",
               ]}
               intervalMs={4600}
-              overlayGradient="linear-gradient(90deg, #ffffff 25%, rgba(255,255,255,0.7) 100%)"
+              overlayGradient="linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.08) 45%, rgba(0,0,0,0.60) 100%)"
               showIndicators={false}
               enableScrollFade={true}
             />

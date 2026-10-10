@@ -71,7 +71,7 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
   return (
     <section id="calculator" style={{ padding: "7rem 0", background: "var(--bg-obsidian)", position: "relative", overflow: "hidden" }}>
       {/* Background Atmosphere Shuffler with Scroll Fade */}
-      <div style={{ position: "absolute", inset: 0, opacity: 0.16, pointerEvents: "none" }}>
+      <div style={{ position: "absolute", inset: 0, opacity: 0.20, pointerEvents: "none" }}>
         <SectionImageShuffler
           images={[
             "/images/casket1.jpg",
@@ -86,7 +86,7 @@ export default function CostCalculator({ onOpenArrangementModal }: CostCalculato
             "Memorial Vigil Candles",
           ]}
           intervalMs={5000}
-          overlayGradient="linear-gradient(180deg, rgba(245, 241, 232, 0.95) 0%, rgba(245, 241, 232, 0.80) 50%, rgba(245, 241, 232, 0.98) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.96) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />

@@ -36,7 +36,7 @@ export default function ContactSection() {
   return (
     <section id="contact" style={{ padding: "7rem 0", background: "var(--bg-pure-black)", position: "relative", overflow: "hidden" }}>
       {/* Background Sanctuary Atmosphere Shuffler with Scroll Fade */}
-      <div style={{ position: "absolute", inset: 0, opacity: 0.18, pointerEvents: "none" }}>
+      <div style={{ position: "absolute", inset: 0, opacity: 0.20, pointerEvents: "none" }}>
         <SectionImageShuffler
           images={[
             "/images/african-funeral-directors.jpg",
@@ -53,7 +53,7 @@ export default function ContactSection() {
             "Solemn Memorial Chapel",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(251, 249, 245, 0.94) 0%, rgba(251, 249, 245, 0.82) 50%, rgba(251, 249, 245, 0.98) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.96) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />

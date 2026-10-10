@@ -166,6 +166,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
           inset: "-10% 0",
           zIndex: 0,
           pointerEvents: "none",
+          opacity: 0.18,
         }}
       >
         <SectionImageShuffler
@@ -186,7 +187,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
             "Cathedral Stained Glass Reverence",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(251, 249, 245, 0.90) 0%, rgba(251, 249, 245, 0.72) 40%, rgba(251, 249, 245, 0.96) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.96) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />
@@ -312,7 +313,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                       "Bespoke Burial Casket",
                     ]}
                     intervalMs={3900}
-                    overlayGradient="linear-gradient(90deg, #ffffff 25%, rgba(255,255,255,0.78) 100%)"
+                    overlayGradient="linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.08) 45%, rgba(0,0,0,0.60) 100%)"
                     showIndicators={false}
                     enableScrollFade={true}
                   />
@@ -459,7 +460,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                       "Cathedral Sacred Atmosphere",
                     ]}
                     intervalMs={4300}
-                    overlayGradient="linear-gradient(90deg, #ffffff 25%, rgba(255,255,255,0.78) 100%)"
+                    overlayGradient="linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.08) 45%, rgba(0,0,0,0.60) 100%)"
                     showIndicators={false}
                     enableScrollFade={true}
                   />
@@ -703,7 +704,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                   "Dignified cortege transport",
                 ]}
                 intervalMs={4400}
-                overlayGradient="linear-gradient(90deg, #ffffff 20%, rgba(255,255,255,0.72) 100%)"
+                overlayGradient="linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.08) 45%, rgba(0,0,0,0.60) 100%)"
                 showIndicators={false}
                 enableScrollFade={true}
               />

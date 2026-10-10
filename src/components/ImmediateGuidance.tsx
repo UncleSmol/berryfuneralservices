@@ -84,6 +84,7 @@ export default function ImmediateGuidance() {
           inset: "-10% 0",
           zIndex: 0,
           pointerEvents: "none",
+          opacity: 0.22,
         }}
       >
         <SectionImageShuffler
@@ -100,7 +101,7 @@ export default function ImmediateGuidance() {
             "Sanctuary Peace",
           ]}
           intervalMs={5000}
-          overlayGradient="linear-gradient(180deg, rgba(245, 241, 232, 0.90) 0%, rgba(245, 241, 232, 0.72) 40%, rgba(245, 241, 232, 0.96) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.95) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />

@@ -61,6 +61,7 @@ export default function Testimonials() {
           inset: "-10% 0",
           zIndex: 0,
           pointerEvents: "none",
+          opacity: 0.18,
         }}
       >
         <SectionImageShuffler
@@ -79,7 +80,7 @@ export default function Testimonials() {
             "Cathedral Stained Glass",
           ]}
           intervalMs={4800}
-          overlayGradient="linear-gradient(180deg, rgba(251, 249, 245, 0.92) 0%, rgba(251, 249, 245, 0.74) 40%, rgba(251, 249, 245, 0.98) 100%)"
+          overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 40%, rgba(0,0,0,0.96) 100%)"
           showIndicators={false}
           enableScrollFade={true}
         />

@@ -66,7 +66,7 @@ export default function FleetFacilities() {
                 position: "relative",
                 minHeight: "420px",
                 overflow: "hidden",
-                background: "#f0ece4",
+                background: "#050505",
               }}
               className="fleet-image-col"
             >
@@ -84,7 +84,7 @@ export default function FleetFacilities() {
                   "Climate-Controlled Family Passenger Vehicle",
                 ]}
                 intervalMs={4200}
-                overlayGradient="linear-gradient(180deg, rgba(245, 241, 232, 0.05) 0%, rgba(245, 241, 232, 0.45) 90%)"
+                overlayGradient="linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 90%)"
                 caption="Cortege"
                 enableScrollFade={true}
               />
