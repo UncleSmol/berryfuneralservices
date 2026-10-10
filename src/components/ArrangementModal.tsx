@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { X, Check, Calendar, Phone, Clock, ArrowRight, MessageSquare, Mail } from "lucide-react";
 import { getArrangementTemplates } from "@/utils/contactTemplates";
 
@@ -106,11 +107,32 @@ export default function ArrangementModal({
 
         {step !== 3 && (
           <div style={{ marginBottom: "2.5rem" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
-              <span className="pulse-indicator" />
-              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-primary)", fontWeight: 700 }}>
-                BERRY CONCIERGE
-              </span>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.85rem", marginBottom: "1rem", flexWrap: "wrap" }}>
+              <div
+                style={{
+                  background: "#ffffff",
+                  padding: "4px 10px",
+                  borderRadius: "4px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  border: "1px solid rgba(212, 175, 55, 0.4)",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.4)",
+                }}
+              >
+                <Image
+                  src="/images/berryfuneralservices-logo.png"
+                  alt="Berry Funeral Services"
+                  width={140}
+                  height={45}
+                  style={{ height: "32px", width: "auto", objectFit: "contain", display: "block" }}
+                />
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <span className="pulse-indicator" />
+                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--gold-primary)", fontWeight: 700 }}>
+                  BERRY CONCIERGE
+                </span>
+              </div>
             </div>
             <h2 style={{ fontSize: "2rem", color: "#ffffff", lineHeight: 1.2 }}>
               {step === 1 ? "Arrange a Dignified Service" : "Your Consultation Preferences"}

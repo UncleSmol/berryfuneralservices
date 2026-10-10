@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, ArrowUp, Globe } from "lucide-react";
 
 export default function Footer() {
@@ -31,47 +32,27 @@ export default function Footer() {
         >
           {/* Brand Info */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.85rem", marginBottom: "1.5rem" }}>
+            {/* Brand Logo */}
+            <div style={{ marginBottom: "1.5rem" }}>
               <div
                 style={{
-                  width: "42px",
-                  height: "42px",
-                  background: "#080808",
-                  border: "1px solid var(--gold-primary)",
-                  display: "flex",
-                  flexDirection: "column",
+                  background: "#ffffff",
+                  padding: "6px 14px",
+                  borderRadius: "6px",
+                  display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.5), 0 0 15px rgba(212, 175, 55, 0.2)",
+                  border: "1px solid rgba(212, 175, 55, 0.4)",
                 }}
               >
-                <span style={{ fontSize: "0.6rem", color: "var(--gold-primary)", lineHeight: 1 }}>✝</span>
-                <span
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "1.2rem",
-                    fontWeight: 700,
-                    fontStyle: "italic",
-                    color: "#fff",
-                  }}
-                >
-                  B
-                </span>
-              </div>
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <span
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "1.15rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.08em",
-                    color: "#fff",
-                  }}
-                >
-                  BERRY <span className="gold-gradient-text">FUNERALS</span>
-                </span>
-                <span style={{ fontSize: "0.68rem", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.15em" }}>
-                  Dignified Last Goodbye
-                </span>
+                <Image
+                  src="/images/berryfuneralservices-logo.png"
+                  alt="Berry Funeral Services"
+                  width={200}
+                  height={65}
+                  style={{ height: "48px", width: "auto", objectFit: "contain", display: "block" }}
+                />
               </div>
             </div>
 

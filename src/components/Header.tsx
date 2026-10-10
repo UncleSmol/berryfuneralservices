@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, MessageSquare, Menu, X, Calendar } from "lucide-react";
 
 interface HeaderProps {
@@ -106,65 +107,34 @@ export default function Header({ onOpenArrangementModal }: HeaderProps) {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "1rem",
               textDecoration: "none",
             }}
           >
-            {/* Architectural Gold Geometric Crest */}
             <div
               style={{
-                width: "44px",
-                height: "44px",
-                background: "#080808",
-                border: "1px solid var(--gold-primary)",
-                display: "flex",
-                flexDirection: "column",
+                background: "#ffffff",
+                padding: "6px 14px",
+                borderRadius: "6px",
+                display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                position: "relative",
-                boxShadow: "0 0 15px rgba(212, 175, 55, 0.15)",
+                boxShadow: "0 2px 12px rgba(0, 0, 0, 0.45), 0 0 15px rgba(212, 175, 55, 0.2)",
+                border: "1px solid rgba(212, 175, 55, 0.4)",
               }}
             >
-              <span style={{ fontSize: "0.65rem", color: "var(--gold-primary)", lineHeight: 1 }}>✝</span>
-              <span
+              <Image
+                src="/images/berryfuneralservices-logo.png"
+                alt="Berry Funeral Services"
+                width={170}
+                height={55}
                 style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "1.3rem",
-                  fontStyle: "italic",
-                  fontWeight: 700,
-                  color: "#ffffff",
-                  lineHeight: 1,
+                  height: "44px",
+                  width: "auto",
+                  objectFit: "contain",
+                  display: "block",
                 }}
-              >
-                B
-              </span>
-            </div>
-
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <span
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "1.3rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.12em",
-                  color: "#ffffff",
-                  lineHeight: 1.1,
-                }}
-              >
-                BERRY <span className="gold-gradient-text">FUNERALS</span>
-              </span>
-              <span
-                style={{
-                  fontSize: "0.68rem",
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "var(--text-muted)",
-                  fontWeight: 600,
-                  marginTop: "2px",
-                }}
-              >
-                Dignified Last Goodbye • Midrand
-              </span>
+                priority
+              />
             </div>
           </Link>
 
