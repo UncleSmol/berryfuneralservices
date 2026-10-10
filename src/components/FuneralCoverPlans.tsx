@@ -289,37 +289,7 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                 }}
                 className="plan-card-hero-1 gilded-bracket-box"
               >
-                {/* Shuffling Casket Showcase with Scroll Fade */}
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
-                    bottom: 0,
-                    width: "55%",
-                    overflow: "hidden",
-                    pointerEvents: "none",
-                  }}
-                >
-                  <SectionImageShuffler
-                    images={[
-                      "/images/casket1.jpg",
-                      "/images/casket2.jpg",
-                      "/images/casket3.jpg",
-                    ]}
-                    alts={[
-                      "Berry Funeral Services Imperial Casket",
-                      "Polished Timber Casket",
-                      "Bespoke Burial Casket",
-                    ]}
-                    intervalMs={3900}
-                    overlayGradient="linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.08) 45%, rgba(0,0,0,0.60) 100%)"
-                    showIndicators={false}
-                    enableScrollFade={true}
-                  />
-                </div>
-
-                <div style={{ position: "relative", zIndex: 2, maxWidth: "560px" }}>
+                <div style={{ position: "relative", zIndex: 2 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.8rem" }}>
                     <span
                       style={{
@@ -435,37 +405,6 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
                 }}
                 className="plan-card-hero-2 gilded-bracket-box"
               >
-                {/* Background Overlapping Dome Casket */}
-                {/* Shuffling Executive Tier Imagery with Scroll Fade */}
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
-                    bottom: 0,
-                    width: "70%",
-                    overflow: "hidden",
-                    pointerEvents: "none",
-                  }}
-                >
-                  <SectionImageShuffler
-                    images={[
-                      "/images/casket3.jpg",
-                      "/images/pexels-mercedes-luxury.jpg",
-                      "/images/pexels-cathedral-stainedglass.jpg",
-                    ]}
-                    alts={[
-                      "Executive 4-Corner Dome Casket",
-                      "Pristine Cortege Fleet",
-                      "Cathedral Sacred Atmosphere",
-                    ]}
-                    intervalMs={4300}
-                    overlayGradient="linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.08) 45%, rgba(0,0,0,0.60) 100%)"
-                    showIndicators={false}
-                    enableScrollFade={true}
-                  />
-                </div>
-
                 <div style={{ position: "relative", zIndex: 2 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.8rem" }}>
                     <span
@@ -681,34 +620,6 @@ export default function FuneralCoverPlans({ onOpenArrangementModal }: FuneralCov
               boxShadow: "0 10px 30px rgba(0, 0, 0, 0.05)",
             }}
           >
-            {/* Shuffling Burial Society Fleet Imagery with Scroll Fade */}
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                right: 0,
-                bottom: 0,
-                width: "48%",
-                pointerEvents: "none",
-              }}
-            >
-              <SectionImageShuffler
-                images={[
-                  "/images/mercedes-fleet.jpg",
-                  "/images/pexels-black-luxury-sedan.jpg",
-                  "/images/pexels-cortege-limo.jpg",
-                ]}
-                alts={[
-                  "Berry Funeral Services Mercedes cortege fleet",
-                  "Solemn family passenger car",
-                  "Dignified cortege transport",
-                ]}
-                intervalMs={4400}
-                overlayGradient="linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.08) 45%, rgba(0,0,0,0.60) 100%)"
-                showIndicators={false}
-                enableScrollFade={true}
-              />
-            </div>
 
             <div
               style={{
